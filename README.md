@@ -1,2 +1,2 @@
 # FreeRise
-## A freelance platform.
+## A freelance platform. - ivo e rapon
