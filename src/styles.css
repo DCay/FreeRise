@@ -4,4 +4,13 @@
 
 * {
   font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
+
+/*.text-primary {*/
+  /*color: #4c83c3;*/
+/*}*/
+
+.text-gray {
+  color: #666;
 }
