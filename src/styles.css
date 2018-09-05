@@ -11,3 +11,22 @@
 .text-gray {
   color: #666;
 }
+
+.btn-primary {
+  background: #4178B6 !important;
+  border-color: transparent !important;
+
+}
+
+.text-primary {
+  color: #4475B8 !important;
+}
+
+.btn-primary:hover {
+  border-color: transparent !important;
+}
+
+.bg-primary {
+  background: #4178B6 !important;
+  border-color: transparent !important;
+}

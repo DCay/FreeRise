@@ -6,8 +6,8 @@ header.masthead {
     url("../../../assets/images/bg-masthead.jpg");
 
   background-size: cover;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 header.masthead .overlay {
@@ -239,4 +239,34 @@ header.masthead h1 {
 
 #newsletter ul li:hover {
   background: #4178B6;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 14px;
+  line-height: 3;
+}
+
+.input-group-text {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.find-freelancer-input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group-text {
+  background: #4178B6;
+  border-color: transparent !important;
+}
+
+.input-group-text .fab {
+  padding-top: 0;
+  font-size: 24px;
+}
+
+.bg-primary {
+  background: #4178B6 !important;
+  border-color: transparent !important;
 }
