@@ -6,8 +6,8 @@ header.masthead {
     url("../../../assets/images/bg-masthead.jpg");
 
   background-size: cover;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 header.masthead .overlay {
@@ -41,8 +41,10 @@ header.masthead h1 {
   width: 60px;
 }
 
-.fa {
-  font-size: 13px;
+.fab {
+  font-size: 22px;
+  color: white;
+  padding-top: 10px;
 }
 
 .padd-section {
@@ -155,18 +157,116 @@ header.masthead h1 {
   color: #626262;
 }
 
-#team .team-block .team-content ul li a .fa {
+#team .team-block .team-content ul li a .fab {
   float: left;
   padding-left: 10px;
   padding-right: 10px;
   transition: 0.3s;
 }
 
-#team .team-block .team-content ul li a .fa:hover {
-  color: #71c55d;
+#team .team-block:hover .team-content {
+  bottom: 0;
+  transition: all 0.5s ease-in-out 0s;
 }
 
-#team .team-block:hover .team-content {
-  bottom: 0px;
-  transition: all 0.5s ease-in-out 0s;
+#newsletter {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(91, 91, 91, 0.7)),
+    url("../../../assets/images/news-letter.jpg");
+  background-size: cover;
+}
+
+#newsletter .form-control {
+  background-color: transparent;
+  border: 1px solid #dddddd;
+  border-radius: 0;
+  height: 50px;
+  text-align: center;
+  width: 70%;
+  background: #fff;
+}
+
+@media (max-width: 575px) {
+  #newsletter .form-control {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+}
+
+#newsletter .form-control:focus {
+  border-color: #4178B6;
+  box-shadow: none;
+  outline: 0 none;
+}
+
+#newsletter .btn {
+  background: #4178B6;
+  color: white;
+  border: 0;
+  border-radius: 0;
+  height: 50px;
+  width: 30%;
+  transition: 0.3s;
+}
+
+@media (max-width: 575px) {
+  #newsletter .btn {
+    width: 100%;
+  }
+}
+
+#newsletter .btn:hover {
+  background: #4178B6;
+}
+
+#newsletter ul {
+  display: inline-block;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+#newsletter ul li {
+  background: #4178B6;
+  border-radius: 50px;
+  float: left;
+  height: 40px;
+  line-height: 35px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 40px;
+  transition: 0.3s;
+}
+
+#newsletter ul li:hover {
+  background: #4178B6;
+}
+
+input::-webkit-input-placeholder {
+  font-size: 14px;
+  line-height: 3;
+}
+
+.input-group-text {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.find-freelancer-input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group-text {
+  background: #4178B6;
+  border-color: transparent !important;
+}
+
+.input-group-text .fab {
+  padding-top: 0;
+  font-size: 24px;
+}
+
+.bg-primary {
+  background: #4178B6 !important;
+  border-color: transparent !important;
 }
