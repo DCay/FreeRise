@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
+import { RegisterModel } from '../../../models/register.model';
+import { FormGroup, FormControl } from '@angular/forms';
+
+export interface AutoCompleteModel {
+  value: any;
+  display: string;
+}
 
 @Component({
   selector: 'app-register',
@@ -7,8 +16,32 @@ import * as $ from 'jquery';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  model: RegisterModel;
 
-  constructor() { }
+  public items = [
+    { display: 'Jquery' },
+    { display: 'Angular' },
+    { display: 'Wordpress' },
+  ];
+
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {
+    this.model = new RegisterModel('', '', '', '', '')
+  }
+
+  form = new FormGroup({
+    "username": new FormControl(''),
+    "password": new FormControl(''),
+    "firstName": new FormControl(''),
+    "lastName": new FormControl(''),
+    "email": new FormControl(''),
+  })
+
+  get diagnostics() {
+    return JSON.stringify(this.form.value);
+  }
 
   ngOnInit() {
 
@@ -30,6 +63,22 @@ export class RegisterComponent implements OnInit {
       });
 
     });
+  }
+
+  registerClient() {
+    console.log(this.model)
+    this.authService.registerClient(this.model)
+    .subscribe(
+      data => {
+        console.log(data)
+        this.router.navigate(['/login'])
+      },
+      err => {
+        console.log(err)
+        // this.form.reset();
+        // this.loginFailed = true;
+        // this.errMessage = err['error']['description']
+      })
   }
 }
 
