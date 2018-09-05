@@ -7,6 +7,9 @@ import { NavigationComponent } from './components/shared-components/navigation/n
 import { FooterComponent } from './components/shared-components/footer/footer.component';
 import { AppRoutingModule } from './app-routing';
 import { ErrorComponent } from './components/error/error.component';
+import { LoginComponent } from './components/authentication/login/login.component';
+import { RegisterComponent } from './components/authentication/register/register.component';
+
 
 @NgModule({
   declarations: [
@@ -14,7 +17,9 @@ import { ErrorComponent } from './components/error/error.component';
     LandingPageComponent,
     NavigationComponent,
     FooterComponent,
-    ErrorComponent
+    ErrorComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
