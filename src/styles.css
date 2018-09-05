@@ -3,15 +3,10 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=cyrillic,cyrillic-ext');
 @import url('https://use.fontawesome.com/releases/v5.3.1/css/all.css');
 
-
 * {
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
 }
-
-/*.text-primary {*/
-  /*color: #4c83c3;*/
-/*}*/
 
 .text-gray {
   color: #666;
