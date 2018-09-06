@@ -2,8 +2,24 @@
   font-weight: initial;
 }
 
-/*Remove all padings in nav bar*/
+/*Remove all paddings in nav bar*/
 .navbar,
 .navbar-brand {
-  padding: 0 !important;
+  padding-left: 10% !important;
+  padding-right: 10% !important;
+
+}
+
+.nav-link {
+  font-weight: 600;
+}
+
+.scrolling {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  box-shadow: 2px 0 2px rgba(0, 0, 0, .3);
+  padding-left: 10% !important;
+  padding-right: 10% !important;
 }
