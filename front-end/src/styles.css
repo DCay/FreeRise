@@ -12,18 +12,18 @@
 }
 
 .btn-primary {
-  background: #4178B6 !important;
+  background: #3C92CA !important;
   border-color: transparent !important;
 
 }
 
 .nav-link:hover {
-  color: #4475B8 !important;
-  border-bottom: 2px solid #4475B8;
+  color: #3C92CA !important;
+  border-bottom: 2px solid #3C92CA;
 }
 
 .text-primary {
-  color: #4475B8 !important;
+  color: #3C92CA !important;
 }
 
 .btn-primary:hover {
@@ -31,6 +31,6 @@
 }
 
 .bg-primary {
-  background: #4178B6 !important;
+  background: #3C92CA !important;
   border-color: transparent !important;
 }
