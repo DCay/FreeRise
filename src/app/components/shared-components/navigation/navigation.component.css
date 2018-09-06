@@ -1,0 +1,9 @@
+.nav-link {
+  font-weight: initial;
+}
+
+/*Remove all padings in nav bar*/
+.navbar,
+.navbar-brand {
+  padding: 0 !important;
+}
