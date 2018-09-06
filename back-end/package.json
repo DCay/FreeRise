@@ -1,0 +1,19 @@
+{
+  "name": "freerise-back-end",
+  "version": "0.0.1",
+  "description": "The Back-End REST Api for the FreeRise Freelance Platform Project.",
+  "main": "index.js",
+  "dependencies": {
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.2.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "run": "node ../web/core/server.js"
+  },
+  "author": "Ivaylo Jelev",
+  "license": "ISC"
+}
