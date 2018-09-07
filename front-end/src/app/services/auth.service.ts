@@ -7,6 +7,7 @@ import { LoginModel } from "../models/login.model";
 
 
 const registerClientUrl = `http://192.168.14.13:8000/api/users/client/register`;
+const registerFreelancerUrl = `http://192.168.14.13:8000/api/users/freelancer/register`
 const loginUrl = `http://192.168.14.13:8000/api/users/login`;
 // const logoutUrl = `https://baas.kinvey.com/user/${appKey}/_logout`;
 
@@ -31,6 +32,12 @@ export class AuthService {
         return this.http.post(registerClientUrl,
             JSON.stringify(model), this.options);
     }
+
+    registerFreelancer(model){
+        return this.http.post(registerFreelancerUrl,
+            JSON.stringify(model), this.options)
+    }
+    
     private options = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
 
     // logout() {

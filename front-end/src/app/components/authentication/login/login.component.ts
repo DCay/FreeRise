@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
 
 
   form = new FormGroup({
-    "username": new FormControl(''),
-    "password": new FormControl('')
+    "username": new FormControl('',[Validators.required, Validators.pattern('[a-zA-Z0-9]+'), Validators.minLength(5), Validators.maxLength(15)]),
+    "password": new FormControl('',[Validators.required, Validators.minLength(5), Validators.maxLength(30)])
   })
 
   ngOnInit() {
@@ -44,5 +44,9 @@ export class LoginComponent implements OnInit {
         err => {
           console.log(err)
         })
+  }
+
+  get f () {
+    return this.form.controls;
   }
 }

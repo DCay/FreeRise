@@ -1,38 +1,58 @@
 <div class="container">
- <h1 style="text-align:center;">Вход</h1>
+  <h1 style="text-align:center;">Вход</h1>
   <div class="row">
     <div class="col-md-6">
-      <div class="panel panel-login"> 
+      <div class="panel panel-login">
         <div class="panel-body">
           <div class="row">
             <div class="col-lg-12">
               <form id="login-form" [formGroup]="form" (ngSubmit)="login()" role="form" style="display: block;">
                 <div class="form-group">
-                    <input type="text" formControlName="username" [(ngModel)]="model.username" tabindex="1" class="form-control" placeholder="Потребителско Име" value="">
+                  <input type="text" formControlName="username" [(ngModel)]="model.username" tabindex="1" class="form-control"
+                    placeholder="Потребителско Име" value="">
+                  <div *ngIf="f.username.touched && f.username.dirty">
+                    <div class="alert alert-danger" *ngIf="f.username.errors?.required">Полето е задължително</div>
+                    <div class="alert alert-danger" *ngIf="f.username.errors?.pattern">Потребителското име трябва да
+                      съдържа само букви и цифри</div>
+                    <div class="alert alert-danger" *ngIf="f.username.errors?.minlength">Потребителско име трябва да
+                      има
+                      поне 5 символа</div>
+                    <div class="alert alert-danger" *ngIf="f.username.errors?.maxlength">Потребителско име трябва да не
+                      превишава 15 символа</div>
                   </div>
-                  <div class="form-group">
-                    <input type="password" formControlName="password" [(ngModel)]="model.password" tabindex="2" class="form-control" placeholder="Парола">
+                </div>
+                <div class="form-group">
+                  <input type="password" formControlName="password" [(ngModel)]="model.password" tabindex="2" class="form-control"
+                    placeholder="Парола">
+                  <div *ngIf="f.password.touched && f.password.dirty">
+                    <div class="alert alert-danger" *ngIf="f.password.errors?.required">Полето е задължително</div>
+                    <div class="alert alert-danger" *ngIf="f.password.errors?.minlength">Паролата трябва да има поне 5
+                      символа</div>
+                    <div class="alert alert-danger" *ngIf="f.password.errors?.maxlength">Паролата трябва да не
+                      превишава 30
+                      символа</div>
                   </div>
-                  <div class="form-group text-center">
-                    <input type="checkbox" tabindex="3" class="" name="remember" >
-                    <label for="remember">Запомни ме</label>
+                </div>
+                <div class="form-group text-center">
+                  <input type="checkbox" tabindex="3" class="" name="remember">
+                  <label for="remember">Запомни ме</label>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                      <input type="submit" name="login-submit" tabindex="4" class="form-control btn btn-login" value="ВХОД">
+                    </div>
                   </div>
-                  <div class="form-group">
-                    <div class="row">
-                      <div class="col-sm-6 col-sm-offset-3">
-                        <input type="submit" name="login-submit"  tabindex="4" class="form-control btn btn-login" value="ВХОД">
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="text-center">
+                        <a href="#" tabindex="5" class="forgot-password">Забравена Парола?</a>
                       </div>
                     </div>
                   </div>
-                  <div class="form-group">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div class="text-center">
-                          <a href="#" tabindex="5" class="forgot-password">Забравена Парола?</a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                </div>
               </form>
             </div>
           </div>
