@@ -8,6 +8,7 @@ header.masthead {
   background-size: cover;
   padding-top: 5rem;
   padding-bottom: 5rem;
+  /*margin-top: 5rem;*/
 }
 
 header.masthead .overlay {
@@ -137,7 +138,7 @@ header.masthead h1 {
   background: #fff none repeat scroll 0 0;
   bottom: 0;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(0, 0, 0, 0.19);
-  bottom: -147px;
+  bottom: -163px;
   padding: 20px 0;
   position: absolute;
   width: 100%;
@@ -171,19 +172,25 @@ header.masthead h1 {
 
 #newsletter {
   background:
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(91, 91, 91, 0.7)),
+    linear-gradient(rgba(0, 0, 0, 0.9), rgba(91, 91, 91, 0.9)),
     url("../../../assets/images/news-letter.jpg");
   background-size: cover;
 }
 
 #newsletter .form-control {
-  background-color: transparent;
-  border: 1px solid #dddddd;
-  border-radius: 0;
   height: 50px;
   text-align: center;
   width: 70%;
   background: #fff;
+  border-top-left-radius: .3rem;
+  border-bottom-left-radius: .3rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.form-control input::-webkit-input-placeholder  {
+  font-size: 2rem;
+
 }
 
 @media (max-width: 575px) {
@@ -194,16 +201,19 @@ header.masthead h1 {
 }
 
 #newsletter .form-control:focus {
-  border-color: #4178B6;
+  border-color: #3C92CA;
   box-shadow: none;
   outline: 0 none;
 }
 
 #newsletter .btn {
-  background: #4178B6;
+  background: #3C92CA;
   color: white;
   border: 0;
-  border-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: .3rem;
+  border-bottom-right-radius: .3rem;
   height: 50px;
   width: 30%;
   transition: 0.3s;
@@ -219,27 +229,27 @@ header.masthead h1 {
   background: #4178B6;
 }
 
-#newsletter ul {
-  display: inline-block;
-  margin-top: 40px;
-  margin-bottom: 0;
-}
+/*#newsletter ul {*/
+  /*display: inline-block;*/
+  /*margin-top: 40px;*/
+  /*margin-bottom: 0;*/
+/*}*/
 
-#newsletter ul li {
-  background: #4178B6;
-  border-radius: 50px;
-  float: left;
-  height: 40px;
-  line-height: 35px;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 40px;
-  transition: 0.3s;
-}
+/*#newsletter ul li {*/
+  /*background: #3C92CA;*/
+  /*border-radius: 50px;*/
+  /*float: left;*/
+  /*height: 40px;*/
+  /*line-height: 35px;*/
+  /*margin-left: 10px;*/
+  /*margin-right: 10px;*/
+  /*width: 40px;*/
+  /*transition: 0.3s;*/
+/*}*/
 
-#newsletter ul li:hover {
-  background: #4178B6;
-}
+/*#newsletter ul li:hover {*/
+  /*background: #3C92CA;*/
+/*}*/
 
 input::-webkit-input-placeholder {
   font-size: 14px;
@@ -257,7 +267,7 @@ input::-webkit-input-placeholder {
 }
 
 .input-group-text {
-  background: #4178B6;
+  background: #3C92CA;
   border-color: transparent !important;
 }
 
@@ -267,6 +277,90 @@ input::-webkit-input-placeholder {
 }
 
 .bg-primary {
-  background: #4178B6 !important;
+  background: #3C92CA !important;
   border-color: transparent !important;
+}
+
+
+/* ---------- SOCIAL ---------- */
+
+.social {
+  position: relative;
+  height: 3em;
+  width: 13.5em;
+  margin: 0 auto;
+  margin-top: 8%;
+
+}
+
+.social li {
+  display: block;
+  height: 4em;
+  line-height: 4em;
+  margin: -2.2em;
+  position: absolute;
+  -webkit-transition: -webkit-transform .7s;
+  -moz-transition: -moz-transform .7s;
+  -ms-transition: -ms-transform .7s;
+  -o-transition: -o-transform .7s;
+  transition: transform .7s;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  text-align: center;
+  width: 4em;
+}
+
+.social a {
+  color: #fffdf0;
+  display: block;
+  height: 4em;
+  line-height: 4em;
+  text-align: center;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  width: 4em;
+}
+
+.social li:hover {
+  -webkit-transform: scale(1.3,1.3) rotate(45deg);
+  -moz-transform: scale(1.3,1.3) rotate(45deg);
+  -ms-transform: scale(1.3,1.3) rotate(45deg);
+  -o-transform: scale(1.3,1.3) rotate(45deg);
+  transform: scale(1.3,1.3) rotate(45deg);
+}
+
+.facebook {
+  background: #4178B6;
+  left: 0;
+  top: 0%;
+}
+
+.twitter {
+  background: #1a9ec4;
+  bottom: 0;
+  left: 25%;
+}
+
+.dribbble {
+  background: #d05f8f;
+  left: 50%;
+  top: 0;
+}
+
+.behance {
+  background: #3C92CA;
+  bottom: 0;
+  left: 75%;
+}
+
+.linked-in {
+  background: #157f9d;
+  left: 100%;
+  top: 0%;
 }

@@ -1,32 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=cyrillic,cyrillic-ext');
 @import url('https://use.fontawesome.com/releases/v5.3.1/css/all.css');
 
-* {
+html,
+body,
+div,
+h4,
+p,
+a,
+img,
+i,
+ul,
+li,
+footer {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+footer {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ul {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 01. Global Style
+   ==================================== */
+body {
+  font-weight: 400;
   font-family: 'Open Sans', sans-serif;
-  font-weight: normal;
 }
-
-.text-gray {
-  color: #666;
+h4 {
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: 3px;
 }
-
-.btn-primary {
-  background: #4178B6 !important;
-  border-color: transparent !important;
-
+a {
+  display: block;
+  transition: 0.2s linear;
+  text-decoration: none;
 }
-
-.text-primary {
-  color: #4475B8 !important;
+a:hover {
+  text-decoration: none;
 }
-
-.btn-primary:hover {
-  border-color: transparent !important;
+p {
+  color: #7782aa;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 1px;
 }
-
-.bg-primary {
-  background: #4178B6 !important;
-  border-color: transparent !important;
+ul li {
+  color: #7782aa;
+  font-size: 15px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
 }

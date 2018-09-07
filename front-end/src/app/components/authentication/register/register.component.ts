@@ -39,6 +39,8 @@ export class RegisterComponent implements OnInit {
     "email": new FormControl(''),
   })
 
+
+
   get diagnostics() {
     return JSON.stringify(this.form.value);
   }
@@ -68,17 +70,17 @@ export class RegisterComponent implements OnInit {
   registerClient() {
     console.log(this.model)
     this.authService.registerClient(this.model)
-    .subscribe(
-      data => {
-        console.log(data)
-        this.router.navigate(['/login'])
-      },
-      err => {
-        console.log(err)
-        // this.form.reset();
-        // this.loginFailed = true;
-        // this.errMessage = err['error']['description']
-      })
+      .subscribe(
+        data => {
+          console.log(data)
+          this.router.navigate(['/login'])
+        },
+        err => {
+          console.log(err)
+          // this.form.reset();
+          // this.loginFailed = true;
+          // this.errMessage = err['error']['description']
+        })
   }
 }
 

@@ -35,8 +35,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     TagInputModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}), //DEPRICATED FORM MODEL
+    HttpClientModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
