@@ -3,12 +3,22 @@ const bcrypt = require('bcrypt');
 const User = require('../../domain/User');
 const Freelancer = require('../../domain/Freelancer');
 const Client = require('../../domain/Client');
+
 const authService = require('../services/authenticationService');
+const responseBuilderService = require('../services/responseBuilderService');
+
+const SUCCESS_REGISTER_USER_MESSAGe = 'Successfully registered {type} - {user}';
+const SUCCESS_REGISTER_FREELANCER_MESSAGE = SUCCESS_REGISTER_USER_MESSAGe.replace('{type}', 'Freelancer');
+const SUCCESS_REGISTER_CLIENT_MESSAGE = SUCCESS_REGISTER_USER_MESSAGe.replace('{type}', 'Client');
+const SUCCESS_LOGIN_MESSAGE = 'Successfully logged in!';
+
+const FAILURE_LOGIN_INCORRECT_USER_OR_PASSWORD_MESSAGE = 'Username or password is invalid!';
 
 function registerFreelancer(req, res) {
     let userData = {
         username: req.body.username,
-        password: req.body.password
+        password: req.body.password,
+        confirmPassword: req.body.confirmPassword
     };
 
     let freelancerData = {
@@ -24,23 +34,14 @@ function registerFreelancer(req, res) {
         freelancerData.account = u;
 
         Freelancer.create(freelancerData).then(f => {
-            let data = {message: 'Successfully registered Freelancer - {user}.'};
+            let data = {message: SUCCESS_REGISTER_FREELANCER_MESSAGE.replace('{user}', u.username)};
 
-            data.message = data.message.replace('{user}', u.username);
-
-            res
-                .status(200)
-                .set('Content-Type', 'application/json')
-                .send(JSON.stringify(data));
-        }).catch(err => {
-            res
-                .status(500)
-                .send(err);
+            responseBuilderService.ok(res, data);
         });
     }).catch(err => {
-        res
-            .status(500)
-            .send(err);
+        let data = {message: err};
+
+        responseBuilderService.internalServerError(res, data);
     });
 }
 
@@ -61,19 +62,14 @@ function registerClient(req, res) {
         clientData.account = u;
 
         Client.create(clientData).then(f => {
-            let data = {message: 'Successfully registered Client - {user}.'};
+            let data = {message: SUCCESS_REGISTER_CLIENT_MESSAGE.replace('{user}', u.username)};
 
-            data.message = data.message.replace('{user}', u.username);
-
-            res
-                .status(200)
-                .set('Content-Type', 'application/json')
-                .send(JSON.stringify(data));
+            responseBuilderService.ok(res, data);
         });
     }).catch(err => {
-        res
-            .status(500)
-            .send(err);
+        let data = {message: err};
+
+        responseBuilderService.internalServerError(res, data);
     });
 }
 
@@ -81,23 +77,16 @@ function loginUser(req, res) {
     let userData = req.body;
 
     User.findOne({username: userData.username}).then(user => {
-        let status = 200;
-        let data = {message: ''};
+        let data = {};
 
-        if (!user) {
-            status = 400;
-            data.message = 'Username or password is invalid!';
-        } else if (user.password !== userData.password) {
-            status = 400;
-            data.message = 'Username or password is invalid!';
+        if (!user || user.password !== userData.password) {
+            data.message = FAILURE_LOGIN_INCORRECT_USER_OR_PASSWORD_MESSAGE;
+            responseBuilderService.badRequest(res, data);
         } else {
-            data.message = 'Successfully logged in!';
+            data.message = SUCCESS_LOGIN_MESSAGE;
             data.authToken = authService.signin(user.username);
+            responseBuilderService.ok(res, data);
         }
-
-        res
-            .status(status)
-            .send(JSON.stringify(data));
     });
 }
 

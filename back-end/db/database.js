@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 const properties = require('../common/properties');
 
+const DATABASE_INITIALIZE_MESSAGE = 'DATABASE INITIALIZED!';
+
 function init() {
     mongoose.connect(properties.get('database.connection-string', {useNewUrlParser: true}));
 
@@ -13,7 +15,7 @@ function init() {
             return;
         }
 
-        console.log('Database Initialized!')
+        console.log(DATABASE_INITIALIZE_MESSAGE);
     });
 }
 
