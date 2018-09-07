@@ -19,15 +19,19 @@ footer {
   font-size: 100%;
   vertical-align: baseline;
 }
+
 footer {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ul {
   list-style: none;
 }
+
 img {
   max-width: 100%;
   height: auto;
@@ -39,28 +43,37 @@ body {
   font-weight: 400;
   font-family: 'Open Sans', sans-serif;
 }
+
 h4 {
   font-size: 32px;
   line-height: 36px;
   letter-spacing: 3px;
 }
+
 a {
   display: block;
   transition: 0.2s linear;
   text-decoration: none;
 }
+
 a:hover {
   text-decoration: none;
 }
+
 p {
   color: #7782aa;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 24px;
   letter-spacing: 1px;
 }
+
 ul li {
   color: #7782aa;
-  font-size: 15px;
+  font-size: 17px;
   margin-bottom: 10px;
   letter-spacing: 1px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #2f395d !important;
 }
