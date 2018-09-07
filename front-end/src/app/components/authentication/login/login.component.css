@@ -1,0 +1,89 @@
+.container-fluid {
+  width: 100%;
+  margin: 9% auto;
+}
+
+form {
+  margin: 10% auto;
+  margin-bottom: 0;
+  width: 43%;
+  background: #F5FAFD;
+  padding: 4%;
+  box-shadow: 1px 1px 44px rgba(38, 63, 90, 0.09);
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.container-fluid h1 {
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+.remember {
+  display: inline-block;
+  margin-bottom: .5rem;
+  padding-left: 7px;
+}
+
+#remember {
+  margin-top: 3px;
+}
+
+#login-btn {
+  font-size: 19px;
+  color: #fff;
+  border-radius: 7px;
+  text-transform: uppercase;
+  border: none;
+  transition: 0.2s linear;
+  background-color: #0479ec;
+  padding-bottom: 12px;
+  float: right;
+  width: 19%;
+}
+
+#login-btn:hover {
+  background: #238ff9;
+  cursor: pointer;
+}
+
+.forgot-password {
+  color: #337ab7;
+  text-decoration: none;
+  transition: 0.2s linear;
+  margin-top: 5px;
+  outline: #F5FAFD;
+  float: left;
+}
+
+.forgot-password {
+  color: #24537D;
+}
+
+.container-fluid input {
+  background: transparent;
+  border: none;
+  color: #8198a6;
+  padding-bottom: 18px;
+  border-bottom: 2px solid #dee6eb;
+  outline: transparent;
+}
+
+#username, #password {
+  background: transparent;
+  border: none;
+  color: #8198a6;
+  padding-bottom: 9px;
+  border-bottom: 2px solid #dee6eb;
+  outline: transparent;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+#username:focus::placeholder, #password:focus::placeholder {
+  color: #647783;
+}
+
+#username:focus,  #password:focus {
+  border-bottom: 2px solid #647783;
+}
