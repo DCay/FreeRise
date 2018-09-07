@@ -1,6 +1,6 @@
 {{diagnostics}}
 {{diagnostics2}}
-<div class="container">
+<div register-jquery class="container">
   <h1 style="text-align:center;">Регистрация</h1>
 
   <div class="row">
@@ -56,6 +56,8 @@
                     <div class="alert alert-danger" *ngIf="f.firstName.errors?.required">Полето е задължително</div>
                     <div class="alert alert-danger" *ngIf="f.firstName.errors?.minlength">Името трябва да има поне 1
                       символа</div>
+                    <div class="alert alert-danger" *ngIf="f.firstName.errors?.pattern">Името трябва да съдържа
+                      латински или букви на кирилица. </div>
                     <div class="alert alert-danger" *ngIf="f.firstName.errors?.maxlength">Името трябва да не превишава
                       20
                       символа</div>
@@ -68,7 +70,11 @@
                     <div class="alert alert-danger" *ngIf="f.lastName.errors?.required">Полето е задължително</div>
                     <div class="alert alert-danger" *ngIf="f.lastName.errors?.minlength">Фамилията трябва да има поне 1
                       символа</div>
-                    <div class="alert alert-danger" *ngIf="f.lastName.errors?.maxlength">Фамилията трябва да не превишава
+                    <div class="alert alert-danger" *ngIf="f.lastName.errors?.pattern">Фамилията трябва да съдържа
+                      латински или букви на кирилица. </div>
+
+                    <div class="alert alert-danger" *ngIf="f.lastName.errors?.maxlength">Фамилията трябва да не
+                      превишава
                       20
                       символа</div>
                   </div>
@@ -135,6 +141,9 @@
                     <div class="alert alert-danger" *ngIf="fr.firstName.errors?.required">Полето е задължително</div>
                     <div class="alert alert-danger" *ngIf="fr.firstName.errors?.minlength">Името трябва да има поне 1
                       символа</div>
+                    <div class="alert alert-danger" *ngIf="fr.firstName.errors?.pattern">Името трябва да съдържа
+                      латински или букви на кирилица. </div>
+
                     <div class="alert alert-danger" *ngIf="fr.firstName.errors?.maxlength">Името трябва да не превишава
                       20
                       символа</div>
@@ -145,9 +154,14 @@
                     class="form-control" placeholder="Фамилия">
                   <div *ngIf="fr.lastName.touched && fr.lastName.dirty">
                     <div class="alert alert-danger" *ngIf="fr.lastName.errors?.required">Полето е задължително</div>
-                    <div class="alert alert-danger" *ngIf="fr.lastName.errors?.minlength">Фамилията трябва да има поне 1
+                    <div class="alert alert-danger" *ngIf="fr.lastName.errors?.minlength">Фамилията трябва да има поне
+                      1
                       символа</div>
-                    <div class="alert alert-danger" *ngIf="fr.lastName.errors?.maxlength">Фамилията трябва да не превишава
+                    <div class="alert alert-danger" *ngIf="fr.lastName.errors?.pattern">Фамилията трябва да съдържа
+                      латински или букви на кирилица. </div>
+
+                    <div class="alert alert-danger" *ngIf="fr.lastName.errors?.maxlength">Фамилията трябва да не
+                      превишава
                       20
                       символа</div>
                   </div>
@@ -155,10 +169,10 @@
                 <div class="form-group">
                   <input type="text" formControlName="email" [(ngModel)]="freeLancerModel.email" tabindex="5" class="form-control"
                     placeholder="Имейл">
-                    <div *ngIf="fr.email.touched && fr.email.dirty">
-                      <div class="alert alert-danger" *ngIf="fr.email.errors?.required">Полето е задължително</div>
-                      <div class="alert alert-danger" *ngIf="fr.email.errors?.email">Имейла е в грешен формат!</div>
-                    </div>
+                  <div *ngIf="fr.email.touched && fr.email.dirty">
+                    <div class="alert alert-danger" *ngIf="fr.email.errors?.required">Полето е задължително</div>
+                    <div class="alert alert-danger" *ngIf="fr.email.errors?.email">Имейла е в грешен формат!</div>
+                  </div>
                 </div>
                 <div class="form-group">
                   <div class="force-to-the-bottom">

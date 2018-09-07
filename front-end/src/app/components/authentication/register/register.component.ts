@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { RegisterModel } from '../../../models/register.model';
 import { FormGroup, FormControl, Validators, EmailValidator } from '@angular/forms';
 import { RegisterFreelancerModel } from '../../../models/register-freelancer.model';
+import { RegisterJqueryDirective } from '../../../directives/register-jquery.directive';
 
 
 export interface AutoCompleteModel {
@@ -39,16 +40,16 @@ export class RegisterComponent implements OnInit {
   form = new FormGroup({
     "username": new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z0-9]+'), Validators.minLength(5), Validators.maxLength(15)]),
     "password": new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
-    "firstName": new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(20)]),
-    "lastName": new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(20)]),
+    "firstName": new FormControl('', [Validators.required, Validators.pattern('[а-яА-Яa-zA-Z]+'), Validators.minLength(1), Validators.maxLength(20)]),
+    "lastName": new FormControl('', [Validators.required, Validators.pattern('[а-яА-Яa-zA-Z]+'), Validators.minLength(1), Validators.maxLength(20)]),
     "email": new FormControl('', [Validators.required, Validators.email]),
   })
 
   freeLancerForm = new FormGroup({
     "username": new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z0-9]+'), Validators.minLength(5), Validators.maxLength(15)]),
     "password": new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)]),
-    "firstName": new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(20)]),
-    "lastName": new FormControl('', [Validators.required, Validators.minLength(1), Validators.maxLength(20)]),
+    "firstName": new FormControl('', [Validators.required, Validators.pattern('[а-яА-Яa-zA-Z]+'), Validators.minLength(1), Validators.maxLength(20)]),
+    "lastName": new FormControl('', [Validators.required, Validators.pattern('[а-яА-Яa-zA-Z]+'), Validators.minLength(1), Validators.maxLength(20)]),
     "email": new FormControl('', [Validators.required, Validators.email]),
     "skills": new FormControl('')
   })
@@ -64,25 +65,6 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    $(function () {
-
-      $('#login-form-link').click(function (e) {
-        $("#login-form").delay(100).fadeIn(100);
-        $("#register-form").fadeOut(100);
-        $('#register-form-link').removeClass('active');
-        $(this).addClass('active');
-        e.preventDefault();
-      });
-      $('#register-form-link').click(function (e) {
-        $("#register-form").delay(100).fadeIn(100);
-        $("#login-form").fadeOut(100);
-        $('#login-form-link').removeClass('active');
-        $(this).addClass('active');
-        e.preventDefault();
-      });
-
-    });
   }
 
   get f() {
