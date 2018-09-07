@@ -1,0 +1,28 @@
+<svg id="icon" xmlns="http://www.w3.org/2000/svg" width="113.18" height="83.97" viewBox="0 0 113.18 83.97">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #f2f8fb;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #0479ec;
+        stroke-width: 4px;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-3 {
+        fill: #0479ec;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="56.545" cy="20.035" r="18.015"/>
+  <path class="cls-2" d="M1131.29,4231.42l23.75-30.3" transform="translate(-1112.41 -4169.62)"/>
+  <path id="Shape_562_copy" data-name="Shape 562 copy" class="cls-2" d="M1204.98,4231.42l-23.74-30.3" transform="translate(-1112.41 -4169.62)"/>
+  <circle id="Ellipse_559_copy" data-name="Ellipse 559 copy" class="cls-1" cx="14.59" cy="69.38" r="12.59"/>
+  <circle id="Ellipse_559_copy_2" data-name="Ellipse 559 copy 2" class="cls-1" cx="98.59" cy="69.38" r="12.59"/>
+  <circle class="cls-3" cx="56.59" cy="20.38" r="5"/>
+</svg>

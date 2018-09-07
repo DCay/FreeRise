@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import * as $ from 'jquery';
 
 @Component({
   selector: 'app-landing-page',
@@ -12,17 +11,6 @@ export class LandingPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    $(document).ready(function () {
-      setInterval(checkScroll, 10);
-    });
-    function checkScroll() {
-      const nav = $('.navbar-white').first();
 
-      if ($(document).scrollTop() > 0 && !nav.hasClass('scrolling')) {
-        nav.addClass('scrolling');
-      } else if ($(document).scrollTop() === 0 && nav.hasClass('scrolling')) {
-        nav.removeClass('scrolling');
-      }
-    }
   }
 }

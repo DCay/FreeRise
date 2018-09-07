@@ -1,0 +1,43 @@
+<svg id="icon" xmlns="http://www.w3.org/2000/svg" width="143.062" height="109" viewBox="0 0 143.062 109">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f2f8fb;
+        stroke: #0479ec;
+        stroke-width: 4px;
+      }
+
+      .cls-1, .cls-2 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #0479ec;
+      }
+    </style>
+  </defs>
+  <g id="serv_1">
+    <path id="Rounded_Rectangle_541" data-name="Rounded Rectangle 541" class="cls-1" d="M549.976,4197.14H669.024a10,10,0,0,1,10,10v10.72a10,10,0,0,1-10,10H549.976a10,10,0,0,1-10-10v-10.72A10,10,0,0,1,549.976,4197.14Z" transform="translate(-537.969 -4158)"/>
+    <path id="Rounded_Rectangle_542" data-name="Rounded Rectangle 542" class="cls-2" d="M556.06,4205.24a2.41,2.41,0,0,1,2.408,2.41v9.7a2.408,2.408,0,1,1-4.816,0v-9.7A2.41,2.41,0,0,1,556.06,4205.24Z" transform="translate(-537.969 -4158)"/>
+    <path id="Rounded_Rectangle_542_copy" data-name="Rounded Rectangle 542 copy" class="cls-2" d="M565.692,4205.24a2.41,2.41,0,0,1,2.408,2.41v9.7a2.408,2.408,0,1,1-4.816,0v-9.7A2.41,2.41,0,0,1,565.692,4205.24Z" transform="translate(-537.969 -4158)"/>
+    <path id="Rounded_Rectangle_542_copy_2" data-name="Rounded Rectangle 542 copy 2" class="cls-2" d="M575.34,4205.24a2.419,2.419,0,0,1,2.423,2.42v9.68a2.424,2.424,0,0,1-4.847,0v-9.68A2.42,2.42,0,0,1,575.34,4205.24Z" transform="translate(-537.969 -4158)"/>
+    <path id="Rounded_Rectangle_542_copy_3" data-name="Rounded Rectangle 542 copy 3" class="cls-2" d="M584.987,4205.24a2.41,2.41,0,0,1,2.409,2.41v9.7a2.409,2.409,0,1,1-4.817,0v-9.7A2.41,2.41,0,0,1,584.987,4205.24Z" transform="translate(-537.969 -4158)"/>
+    <path id="Rounded_Rectangle_542_copy_4" data-name="Rounded Rectangle 542 copy 4" class="cls-1" d="M644.237,4205.24H668a3,3,0,0,1,3,3v8.52a3,3,0,0,1-3,3h-23.76a3,3,0,0,1-3-3v-8.52A3,3,0,0,1,644.237,4205.24Z" transform="translate(-537.969 -4158)"/>
+  </g>
+  <g id="serv_1_copy" data-name="serv_1 copy">
+    <path id="Rounded_Rectangle_541-2" data-name="Rounded Rectangle 541" class="cls-1" d="M549.976,4234.32H669.024a10,10,0,0,1,10,10v10.69a10,10,0,0,1-10,10H549.976a10,10,0,0,1-10-10v-10.69A10,10,0,0,1,549.976,4234.32Z" transform="translate(-537.969 -4158)"/>
+    <path id="Rounded_Rectangle_542-2" data-name="Rounded Rectangle 542" class="cls-2" d="M556.06,4242.39a2.41,2.41,0,0,1,2.408,2.41v9.74a2.408,2.408,0,0,1-4.816,0v-9.74A2.41,2.41,0,0,1,556.06,4242.39Z" transform="translate(-537.969 -4158)"/>
+    <path id="Rounded_Rectangle_542_copy-2" data-name="Rounded Rectangle 542 copy" class="cls-2" d="M565.692,4242.39a2.41,2.41,0,0,1,2.408,2.41v9.74a2.408,2.408,0,0,1-4.816,0v-9.74A2.41,2.41,0,0,1,565.692,4242.39Z" transform="translate(-537.969 -4158)"/>
+    <path id="Rounded_Rectangle_542_copy_2-2" data-name="Rounded Rectangle 542 copy 2" class="cls-2" d="M575.34,4242.39a2.419,2.419,0,0,1,2.423,2.42v9.71a2.424,2.424,0,0,1-4.847,0v-9.71A2.42,2.42,0,0,1,575.34,4242.39Z" transform="translate(-537.969 -4158)"/>
+    <path id="Rounded_Rectangle_542_copy_3-2" data-name="Rounded Rectangle 542 copy 3" class="cls-2" d="M584.987,4242.39a2.41,2.41,0,0,1,2.409,2.41v9.74a2.409,2.409,0,0,1-4.817,0v-9.74A2.41,2.41,0,0,1,584.987,4242.39Z" transform="translate(-537.969 -4158)"/>
+    <path id="Rounded_Rectangle_542_copy_4-2" data-name="Rounded Rectangle 542 copy 4" class="cls-1" d="M644.237,4242.39H668a3,3,0,0,1,3,3v8.55a3,3,0,0,1-3,3h-23.76a3,3,0,0,1-3-3v-8.55A3,3,0,0,1,644.237,4242.39Z" transform="translate(-537.969 -4158)"/>
+  </g>
+  <g id="serv_1_copy_2" data-name="serv_1 copy 2">
+    <path id="Rounded_Rectangle_541-3" data-name="Rounded Rectangle 541" class="cls-1" d="M549.976,4159.99H669.024a10,10,0,0,1,10,10v10.69a10,10,0,0,1-10,10H549.976a10,10,0,0,1-10-10v-10.69A10,10,0,0,1,549.976,4159.99Z" transform="translate(-537.969 -4158)"/>
+    <path id="Rounded_Rectangle_542-3" data-name="Rounded Rectangle 542" class="cls-2" d="M556.06,4168.06a2.4,2.4,0,0,1,2.408,2.4v9.74a2.408,2.408,0,1,1-4.816,0v-9.74A2.4,2.4,0,0,1,556.06,4168.06Z" transform="translate(-537.969 -4158)"/>
+    <path id="Rounded_Rectangle_542_copy-3" data-name="Rounded Rectangle 542 copy" class="cls-2" d="M565.692,4168.06a2.4,2.4,0,0,1,2.408,2.4v9.74a2.408,2.408,0,1,1-4.816,0v-9.74A2.4,2.4,0,0,1,565.692,4168.06Z" transform="translate(-537.969 -4158)"/>
+    <path id="Rounded_Rectangle_542_copy_2-3" data-name="Rounded Rectangle 542 copy 2" class="cls-2" d="M575.34,4168.06a2.419,2.419,0,0,1,2.423,2.42v9.71a2.424,2.424,0,0,1-4.847,0v-9.71A2.42,2.42,0,0,1,575.34,4168.06Z" transform="translate(-537.969 -4158)"/>
+    <path id="Rounded_Rectangle_542_copy_3-3" data-name="Rounded Rectangle 542 copy 3" class="cls-2" d="M584.987,4168.06a2.4,2.4,0,0,1,2.409,2.4v9.74a2.409,2.409,0,1,1-4.817,0v-9.74A2.4,2.4,0,0,1,584.987,4168.06Z" transform="translate(-537.969 -4158)"/>
+    <path id="Rounded_Rectangle_542_copy_4-3" data-name="Rounded Rectangle 542 copy 4" class="cls-1" d="M644.237,4168.06H668a3,3,0,0,1,3,3v8.55a3,3,0,0,1-3,3h-23.76a3,3,0,0,1-3-3v-8.55A3,3,0,0,1,644.237,4168.06Z" transform="translate(-537.969 -4158)"/>
+  </g>
+</svg>
