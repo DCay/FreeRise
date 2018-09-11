@@ -89,8 +89,13 @@ input:focus::placeholder {
 .client-freelancer .col-xs-6 {
   border: none;
   transition: 0.2s linear;
-  background-color: #0479ec;
+  background-color: green;
   padding: 4px 16px;
+  cursor: pointer;
+}
+
+.client-freelancer .col-xs-6:active {
+  background-color: blue;
 }
 
 .client-freelancer .col-xs-6:first-child {
@@ -108,7 +113,11 @@ input:focus::placeholder {
   text-decoration: none;
 }
 
-.client-freelancer .col-xs-6:checked {
+/* .client-freelancer .col-xs-6:checked {
   background: #238ff9;
   cursor: pointer;
+} */
+
+.clientRegister {
+  background-color: green;
 }

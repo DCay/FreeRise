@@ -1,40 +1,31 @@
-<<<<<<< HEAD
-
 <div register-jquery class="container">
   <h1 style="text-align:center;">Регистрация</h1>
 
-<div register-jquery class="container-fluid">
-
-=======
-<div register-jquery class="container">
-  <!--{{diagnostics}}-->
-  <!--{{diagnostics2}}-->
   <div register-jquery class="container-fluid">
->>>>>>> 2259e12cb693fa3b376de113498e26b885a2b45a
+
 
     <div class="row">
       <div class="col-md-12 mt-5">
         <div class="panel panel-login mt-5">
           <div class="panel-heading col-5 m-auto">
             <div class="row client-freelancer">
-              <div [style.background]="clientButton" class="col-xs-6 px-5" (click)="changeColor()">
-                <a href="#" class="active" id="login-form-link">Клиент</a>
+              <div [style.background]="clientButton" class="col-xs-6 px-5" (click)="changeColor(1)" id="client-form-link">
+                <a href="#" class="active">Клиент</a>
               </div>
-              <div [style.background]="freelancerButton" class="col-xs-6  px-5" (click)="changeColor()">
-                <a href="#" id="register-form-link">Разработчик</a>
+              <div [style.background]="freelancerButton" class="col-xs-6  px-5" (click)="changeColor(2)" id="freelancer-form-link">
+                <a href="#">Разработчик</a>
               </div>
             </div>
           </div>
           <div class="panel-body">
             <div class="row">
               <div class="col-lg-12">
-                <form id="login-form" [formGroup]="form" (ngSubmit)="registerClient()" role="form"
-                      style="display: block;">
+                <form id="client-form" [formGroup]="form" (ngSubmit)="registerClient()" role="form" style="display: block;">
                   <!--<h1 class="h1 mb-4 text-left">Регистрация</h1>-->
 
                   <div class="form-group">
                     <input type="text" formControlName="username" [(ngModel)]="model.username" class="username"
-                           tabindex="1" placeholder="Потребителско име" value="">
+                      tabindex="1" placeholder="Потребителско име" value="">
                     <div *ngIf="f.username.touched && f.username.dirty">
                       <div class="alert alert-danger" *ngIf="f.username.errors?.required">Полето е задължително</div>
                       <div class="alert alert-danger" *ngIf="f.username.errors?.pattern">Потребителското име трябва да
@@ -52,10 +43,11 @@
                   </div>
                   <div class="form-group">
                     <input type="password" formControlName="password" [(ngModel)]="model.password" tabindex="2"
-                           placeholder="Парола">
+                      placeholder="Парола">
                     <div *ngIf="f.password.touched && f.password.dirty">
                       <div class="alert alert-danger" *ngIf="f.password.errors?.required">Полето е задължително</div>
-                      <div class="alert alert-danger" *ngIf="f.password.errors?.minlength">Паролата трябва да има поне 5
+                      <div class="alert alert-danger" *ngIf="f.password.errors?.minlength">Паролата трябва да има поне
+                        5
                         символа
                       </div>
                       <div class="alert alert-danger" *ngIf="f.password.errors?.maxlength">Паролата трябва да не
@@ -66,7 +58,7 @@
                   </div>
                   <div class="form-group">
                     <input type="text" formControlName="firstName" [(ngModel)]="model.firstName" tabindex="3"
-                           placeholder="Име">
+                      placeholder="Име">
                     <div *ngIf="f.firstName.touched && f.firstName.dirty">
                       <div class="alert alert-danger" *ngIf="f.firstName.errors?.required">Полето е задължително</div>
                       <div class="alert alert-danger" *ngIf="f.firstName.errors?.minlength">Името трябва да има поне 1
@@ -75,15 +67,15 @@
                       <div class="alert alert-danger" *ngIf="f.firstName.errors?.pattern">Името трябва да съдържа
                         латински или букви на кирилица.
                       </div>
-                      <div class="alert alert-danger" *ngIf="f.firstName.errors?.maxlength">Името трябва да не превишава
+                      <div class="alert alert-danger" *ngIf="f.firstName.errors?.maxlength">Името трябва да не
+                        превишава
                         20
                         символа
                       </div>
                     </div>
                   </div>
                   <div class="form-group">
-                    <input type="text" formControlName="lastName" [(ngModel)]="model.lastName" tabindex="4"
-                           placeholder="Фамилия">
+                    <input type="text" formControlName="lastName" [(ngModel)]="model.lastName" tabindex="4" placeholder="Фамилия">
                     <div *ngIf="f.lastName.touched && f.lastName.dirty">
                       <div class="alert alert-danger" *ngIf="f.lastName.errors?.required">Полето е задължително</div>
                       <div class="alert alert-danger" *ngIf="f.lastName.errors?.minlength">Фамилията трябва да има поне
@@ -102,8 +94,7 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <input type="email" formControlName="email" [(ngModel)]="model.email" tabindex="5"
-                           placeholder="Имейл">
+                    <input type="email" formControlName="email" [(ngModel)]="model.email" tabindex="5" placeholder="Имейл">
                     <div *ngIf="f.email.touched && f.email.dirty">
                       <div class="alert alert-danger" *ngIf="f.email.errors?.required">Полето е задължително</div>
                       <div class="alert alert-danger" *ngIf="f.email.errors?.email">Имейла е в грешен формат!</div>
@@ -113,18 +104,16 @@
                   <div class="form-group">
                     <div class="row">
                       <div class="col-sm-6 col-sm-offset-3">
-                        <input type="submit" name="login-submit" tabindex="6" class="register-btn"
-                               value="Регистрация">
+                        <input type="submit" name="login-submit" tabindex="6" class="register-btn" value="Регистрация">
                       </div>
                     </div>
                   </div>
                 </form>
-                <form id="register-form" [formGroup]="freeLancerForm" (ngSubmit)="registerFreelancer()" role="form"
-                      style="display: none;">
+                <form id="freelancer-form" [formGroup]="freeLancerForm" (ngSubmit)="registerFreelancer()" role="form"
+                  style="display: none;">
                   <div class="form-group">
-                    <input type="text" formControlName="username" [(ngModel)]="freeLancerModel.username"
-                           class="username"
-                           tabindex="1" placeholder="Потребителско Име" value="">
+                    <input type="text" formControlName="username" [(ngModel)]="freeLancerModel.username" class="username"
+                      tabindex="1" placeholder="Потребителско Име" value="">
                     <div *ngIf="fr.username.touched && fr.username.dirty">
                       <div class="alert alert-danger" *ngIf="fr.username.errors?.required">Полето е задължително</div>
                       <div class="alert alert-danger" *ngIf="fr.username.errors?.pattern">Потребителското име трябва да
@@ -141,8 +130,8 @@
                     </div>
                   </div>
                   <div class="form-group">
-                    <input type="password" formControlName="password" [(ngModel)]="freeLancerModel.password"
-                           tabindex="2" placeholder="Парола">
+                    <input type="password" formControlName="password" [(ngModel)]="freeLancerModel.password" tabindex="2"
+                      placeholder="Парола">
                     <div *ngIf="fr.password.touched && fr.password.dirty">
                       <div class="alert alert-danger" *ngIf="fr.password.errors?.required">Полето е задължително</div>
                       <div class="alert alert-danger" *ngIf="fr.password.errors?.minlength">Паролата трябва да има поне
@@ -157,7 +146,7 @@
                   </div>
                   <div class="form-group">
                     <input type="text" formControlName="firstName" [(ngModel)]="freeLancerModel.firstName" tabindex="3"
-                           placeholder="Име">
+                      placeholder="Име">
                     <div *ngIf="fr.firstName.touched && fr.firstName.dirty">
                       <div class="alert alert-danger" *ngIf="fr.firstName.errors?.required">Полето е задължително</div>
                       <div class="alert alert-danger" *ngIf="fr.firstName.errors?.minlength">Името трябва да има поне 1
@@ -176,10 +165,11 @@
                   </div>
                   <div class="form-group">
                     <input type="text" formControlName="lastName" [(ngModel)]="freeLancerModel.lastName" tabindex="4"
-                           placeholder="Фамилия">
+                      placeholder="Фамилия">
                     <div *ngIf="fr.lastName.touched && fr.lastName.dirty">
                       <div class="alert alert-danger" *ngIf="fr.lastName.errors?.required">Полето е задължително</div>
-                      <div class="alert alert-danger" *ngIf="fr.lastName.errors?.minlength">Фамилията трябва да има поне
+                      <div class="alert alert-danger" *ngIf="fr.lastName.errors?.minlength">Фамилията трябва да има
+                        поне
                         1
                         символа
                       </div>
@@ -196,7 +186,7 @@
                   </div>
                   <div class="form-group">
                     <input type="text" formControlName="email" [(ngModel)]="freeLancerModel.email" tabindex="5"
-                           placeholder="Имейл">
+                      placeholder="Имейл">
                     <div *ngIf="fr.email.touched && fr.email.dirty">
                       <div class="alert alert-danger" *ngIf="fr.email.errors?.required">Полето е задължително</div>
                       <div class="alert alert-danger" *ngIf="fr.email.errors?.email">Имейла е в грешен формат!</div>
@@ -204,10 +194,8 @@
                   </div>
                   <div class="form-group">
                     <div class="force-to-the-bottom">
-                      <tag-input formControlName="skills" [(ngModel)]="freeLancerModel.skills" maxItems="5">
-                        <tag-input-dropdown [minimumTextLength]="5" [autocompleteItems]="items"
-                                            [showDropdownIfEmpty]="true"
-                                            [dynamicUpdate]="false">
+                      <tag-input formControlName="skills" [(ngModel)]="freeLancerModel.skills">
+                        <tag-input-dropdown [autocompleteItems]="items" [showDropdownIfEmpty]="true" [dynamicUpdate]="false">
                         </tag-input-dropdown>
                       </tag-input>
                     </div>
@@ -215,9 +203,8 @@
                   <div class="form-group">
                     <div class="row">
                       <div class="col-sm-6 col-sm-offset-3">
-                        <input type="submit" name="login-submit" id="login-submit" tabindex="6"
-                               class="register-btn"
-                               value="Регистрация">
+                        <input type="submit" name="login-submit" id="login-submit" tabindex="6" class="register-btn"
+                          value="Регистрация">
                       </div>
                     </div>
                   </div>
