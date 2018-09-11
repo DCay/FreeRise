@@ -1,0 +1,129 @@
+/*******************
+This is for the minisidebar
+******************/
+
+@media(min-width:769px) {
+    .horizontal-nav {
+        /*This is for the navigation*/
+        .left-sidebar {
+            position: relative;
+            width: 100%;
+            height: auto;
+            padding-top: 0px;
+        }
+        .scroll-sidebar{
+            height: auto;
+        }
+        .sidebar-nav {
+            padding: 0px 15px;
+            #sidebarnav {
+                display: flex;
+                li {
+                    position: relative;
+                    a {
+                        padding: 12px 15px;
+                    }
+                }
+                >li {
+                    display: inline-block;
+                    margin-bottom: 0px;
+                    
+                    &:hover > a{
+                        background: $sidebar-alt;
+                    }
+                    &:last-child > ul {
+                        right: 0px;
+                        left: auto;
+                    }
+                    > a.two-column + ul{
+                        width: 400px;
+                        > li{
+                            display: inline-block;
+                            width: 49%;
+                            vertical-align: top;
+                        }
+                    }
+                }
+                > li > ul {
+                    position: absolute;
+                    left: 0px;
+                    top: 59px;
+                    width: 220px;
+                    max-height: 350px;
+                    overflow-y: auto;
+                    padding-bottom: 10px;
+                    z-index: 1001;
+                    background: $sidebar-alt;
+                    display: none;
+                    padding-left: 1px;
+                   
+                }
+                > li:hover > ul {
+                    height: auto !important;
+                    overflow: auto;
+                }
+                > li:hover > ul,
+                > li:hover > ul.collapse {
+                    display: block;
+                }
+                > li > a.has-arrow:after {
+                    display: none;
+                }
+                .nav-small-cap,
+                .sidebar-footer,
+                .user-profile .profile-text,
+                >.label {
+                    display: none;
+                }
+            }
+        }
+        .navbar-header{
+            width: auto;
+            padding-left: 15px;
+        }
+        /*This is for the page wrapper*/
+        .page-wrapper{
+            margin-left:0px; 
+            height: calc(100vh - 160px );
+        }  
+        .footer{
+            left: 0px;
+        }
+        .page-titles{
+            background: transparent!important;
+            box-shadow: none;
+            margin: 30px 0px 10px 0px; 
+        }
+    }
+    
+}
+
+@media(min-width:1400px) {
+    .boxed{
+        .topbar .top-navbar, .scroll-sidebar, .container-fluid, .page-titles{
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        .footer{
+            text-align: center;
+        }
+    }
+}
+@media(max-width:768px) {
+    .mini-sidebar {
+            .left-sidebar,
+            .sidebar-footer {
+                left: -240px;
+            }
+          .page-wrapper{
+            margin-left:0px; 
+            
+        }
+        .footer{
+            left: 0px;
+        }
+    }
+    .scroll-sidebar{
+            overflow: auto; 
+        } 
+}

@@ -1,42 +1,247 @@
-<header class="transparent">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-2">
-        <div class="logo"><a href="#"><img src="../../../../assets/images/logo/freerise-logo.jpg" alt="logo"></a></div>
-      </div>
-      <div class="col-md-7">
-        <ul class="menu pt-3">
-          <li><a href="#">Как работи</a></li>
-          <li><a href="#">Публикувай обява</a></li>
-          <li><a href="#">Намери разработчик</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <div class="menu button-header">
-          <a routerLink="register" class="custom-btn login" style="cursor:pointer;">Регистрация</a>
-          <a routerLink="login" class="custom-btn">Вход</a>
-        </div>
-      </div>
+<header class="topbar">
+  <nav class="navbar top-navbar navbar-expand-md navbar-light">
+    <!-- ============================================================== -->
+    <!-- Logo -->
+    <!-- ============================================================== -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">
+        <!-- Logo icon --><b>
+          <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+          <!-- Dark Logo icon -->
+          <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+          <!-- Light Logo icon -->
+          <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+        </b>
+        <!--End Logo icon -->
+        <!-- Logo text --><span>
+          <!-- dark Logo text -->
+          <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+          <!-- Light Logo text -->
+          <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
     </div>
-  </div>
-  <div class="mobile-block">
-    <div class="logo-mobile"><a href="#"><img src="../../../../assets/images/logo/freerise-logo.png" alt="logo"></a></div>
-    <a href="#" class="mobile-menu-btn"><span></span></a>
-    <div class="mobile-menu">
-      <div class="inside">
-        <div class="logo">
-          <a href="#"><img src="../../../../assets/images/logo/freerise-logo.png" alt="logo"></a>
-        </div>
-        <ul class="menu panel-group" id="accordion" aria-multiselectable="true">
-          <li><a href="#">Как работи</a></li>
-          <li><a href="#">Публикувай обява</a></li>
-          <li><a href="#">Намери разработчик</a></li>
-        </ul>
-        <div class="button-header">
-          <a routerLink="login" class="custom-btn login">Вход</a>
-          <a routerLink="register" class="custom-btn">Регистрация</a>
-        </div>
-      </div>
+    <!-- ============================================================== -->
+    <!-- End Logo -->
+    <!-- ============================================================== -->
+    <div class="navbar-collapse">
+      <ul class="navbar-nav mr-auto mt-md-0">
+        <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-lg-up text-muted waves-effect waves-dark"
+            href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+      </ul>
+      <!-- ============================================================== -->
+      <!-- toggle and nav items -->
+      <!-- ============================================================== -->
+      <ul class="navbar-nav ml-auto mt-md-0">
+        <!-- This is  -->
+        <!-- ============================================================== -->
+        <!-- Comment -->
+        <!-- ============================================================== -->
+        <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
+          <a ngbDropdownToggle class="nav-link text-muted text-muted waves-effect waves-dark" href="javascript:void(0)">
+            <i class="mdi mdi-message"></i>
+            <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+          </a>
+          <div class="dropdown-menu mailbox animated slideInDown" ngbDropdownMenu>
+            <ul>
+              <li>
+                <div class="drop-title">Notifications</div>
+              </li>
+              <li>
+                <div class="message-center" [perfectScrollbar]="config">
+                  <!-- Message -->
+                  <a href="#" *ngFor="let notification of notifications">
+                    <div class="round {{notification.round}}"><i class="{{notification.icon}}"></i></div>
+                    <div class="mail-contnet">
+                      <h5>{{notification.title}}</h5> <span class="mail-desc">{{notification.subject}}</span> <span
+                        class="time">{{notification.time}}</span>
+                    </div>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i
+                    class="fa fa-angle-right"></i> </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!-- ============================================================== -->
+        <!-- End Comment -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Messages -->
+        <!-- ============================================================== -->
+        <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
+          <a ngbDropdownToggle class="nav-link text-muted waves-effect waves-dark" href="javascript:void(0)"> <i class="mdi mdi-email"></i>
+            <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+          </a>
+          <div class="dropdown-menu mailbox animated slideInDown" ngbDropdownMenu>
+            <ul>
+              <li>
+                <div class="drop-title">You have 4 new messages</div>
+              </li>
+              <li>
+                <div class="message-center" [perfectScrollbar]="config">
+                  <a href="#" *ngFor="let mymessage of mymessages">
+                    <div class="user-img"> <img src="{{mymessage.useravatar}}" alt="user" class="img-circle" width="40">
+                      <span class="profile-status {{mymessage.status}} pull-right"></span>
+                    </div>
+                    <div class="mail-contnet">
+                      <h5>{{mymessage.from}}</h5>
+                      <span class="mail-desc">{{mymessage.subject}}</span>
+                      <span class="time">{{mymessage.time}}</span>
+                    </div>
+                  </a>
+                </div>
+              </li>
+              <li>
+                <a class="nav-link text-center" href="javascript:void(0);"> <strong>See all e-Mails</strong> <i class="fa fa-angle-right"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <!-- ============================================================== -->
+        <!-- End Messages -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Messages -->
+        <!-- ============================================================== -->
+        <!-- <li class="nav-item dropdown mega-dropdown" ngbDropdown [autoClose]="false"> <a ngbDropdownToggle class="nav-link text-muted waves-effect waves-dark"
+            href="javascript:void(0)"><i class="mdi mdi-view-grid"></i></a>
+          <div class="dropdown-menu animated slideInDown" ngbDropdownMenu>
+            <ul class="mega-dropdown-menu row">
+              <li class="col-lg-3 col-xlg-2 m-b-30">
+                <h4 class="m-b-20">CAROUSEL</h4>
+                CAROUSEL
+                <ngb-carousel>
+                  <ng-template ngbSlide>
+                    <img src="assets/images/big/img1.jpg" class="img-responsive" alt="Random first slide">
+                    <div class="carousel-caption">
+                      <h3 class="text-white font-bold">First slide label</h3>
+
+                    </div>
+                  </ng-template>
+                  <ng-template ngbSlide>
+                    <img src="assets/images/big/img2.jpg" class="img-responsive" alt="Random second slide">
+                    <div class="carousel-caption">
+                      <h3 class="text-white font-bold">Second slide label</h3>
+
+                    </div>
+                  </ng-template>
+                  <ng-template ngbSlide>
+                    <img src="assets/images/big/img3.jpg" class="img-responsive" alt="Random third slide">
+                    <div class="carousel-caption">
+                      <h3 class="text-white font-bold">Third slide label</h3>
+
+                    </div>
+                  </ng-template>
+                </ngb-carousel>
+                End CAROUSEL
+
+              </li>
+              <li class="col-lg-3 m-b-30">
+                <h4 class="m-b-20">ACCORDION</h4>
+                Accordian
+                <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" class="accordion nav-accordion">
+                  <ngb-panel title="Simple">
+                    <ng-template ngbPanelContent>
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                    </ng-template>
+                  </ngb-panel>
+                  <ngb-panel>
+                    <ng-template ngbPanelTitle>
+                      <span>&#9733; <b>Fancy</b> title &#9733;</span>
+                    </ng-template>
+                    <ng-template ngbPanelContent>
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                    </ng-template>
+                  </ngb-panel>
+                  <ngb-panel title="Disabled" [disabled]="true">
+                    <ng-template ngbPanelContent>
+                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                    </ng-template>
+                  </ngb-panel>
+                </ngb-accordion>
+              </li>
+
+
+              <li class="col-lg-3  m-b-30">
+                <h4 class="m-b-20">CONTACT US</h4>
+               Contact 
+                <form>
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="exampleInputname1" placeholder="Enter Name"> </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Enter email"> </div>
+                  <div class="form-group">
+                    <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Message"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-info">Submit</button>
+                </form>
+              </li>
+              <li class="col-lg-3 col-xlg-4 m-b-30">
+                <h4 class="m-b-20">List style</h4>
+                 List style
+                <ul class="list-style-none">
+                  <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> You can give link</a></li>
+                  <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Give link</a></li>
+                  <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Another Give link</a></li>
+                  <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Forth link</a></li>
+                  <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Another fifth link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </li> -->
+
+        <!-- ============================================================== -->
+        <!-- End Messages -->
+        <!-- ============================================================== -->
+      </ul>
+      <!-- ============================================================== -->
+      <!-- User profile and search -->
+      <!-- ============================================================== -->
+      <ul class="navbar-nav my-lg-0">
+        <!-- ============================================================== -->
+        <!-- Search -->
+        <!-- ============================================================== -->
+        <!-- <li class="nav-item hidden-sm-down search-box" > <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                 <form class="app-search">
+                     <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
+            </li> -->
+        <!-- ============================================================== -->
+        <!-- Profile -->
+        <!-- ============================================================== -->
+        <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
+          <a ngbDropdownToggle class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="javascript:void(0)"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user"
+              class="profile-pic" /></a>
+          <div class="dropdown-menu animated slideInDown" ngbDropdownMenu>
+            <ul class="dropdown-user">
+              <li>
+                <div class="dw-user-box">
+                  <div class="u-img"><img src="assets/images/users/1.jpg" alt="user"></div>
+                  <div class="u-text">
+                    <h4>Steave Jobs</h4>
+                    <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View
+                      Profile</a>
+                  </div>
+                </div>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
+              <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
+              <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
     </div>
-  </div>
+  </nav>
 </header>
+
+

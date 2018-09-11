@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { TagInputModule } from 'ngx-chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // this is needed!
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
@@ -41,6 +43,8 @@ import { ResetComponent } from './components/authentication/reset/reset.componen
     FormsModule,
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}), //DEPRICATED FORM MODEL
     HttpClientModule,
+    PerfectScrollbarModule,
+    NgbModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
