@@ -15,6 +15,7 @@ import { RegisterComponent } from './components/authentication/register/register
 import {TagRegisterComponent} from './shared/tag-register-component'; //!!!! MOVE
 import { AuthService } from './services/auth.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RegisterJqueryDirective } from './directives/register-jquery.directive';
 
 
 
@@ -27,7 +28,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     ErrorComponent,
     LoginComponent,
     RegisterComponent,
-    TagRegisterComponent
+    TagRegisterComponent,
+    RegisterJqueryDirective
   ],
   imports: [
     BrowserModule,
@@ -35,8 +37,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     TagInputModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}), //DEPRICATED FORM MODEL
+    HttpClientModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

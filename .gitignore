@@ -7,9 +7,13 @@
 
 # dependencies
 /node_modules
+node_modules/
 
 # IDEs and editors
+.idea
 /.idea
+.idea/*
+/.idea/*
 .project
 .classpath
 .c9/
