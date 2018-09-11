@@ -16,6 +16,7 @@ import {TagRegisterComponent} from './shared/tag-register-component'; //!!!! MOV
 import { AuthService } from './services/auth.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RegisterJqueryDirective } from './directives/register-jquery.directive';
+import { ResetComponent } from './components/authentication/reset/reset.component';
 
 
 
@@ -29,7 +30,8 @@ import { RegisterJqueryDirective } from './directives/register-jquery.directive'
     LoginComponent,
     RegisterComponent,
     TagRegisterComponent,
-    RegisterJqueryDirective
+    RegisterJqueryDirective,
+    ResetComponent
   ],
   imports: [
     BrowserModule,
