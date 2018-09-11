@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { RegisterModel } from '../../../models/register.model';
 import { FormGroup, FormControl, Validators, EmailValidator } from '@angular/forms';
 import { RegisterFreelancerModel } from '../../../models/register-freelancer.model';
-import { RegisterJqueryDirective } from '../../../directives/register-jquery.directive';
 
 
 export interface AutoCompleteModel {
