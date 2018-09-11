@@ -19,6 +19,7 @@ import { AuthService } from './services/auth.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RegisterJqueryDirective } from './directives/register-jquery.directive';
 import { ResetComponent } from './components/authentication/reset/reset.component';
+import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
 
 
 
@@ -33,7 +34,8 @@ import { ResetComponent } from './components/authentication/reset/reset.componen
     RegisterComponent,
     TagRegisterComponent,
     RegisterJqueryDirective,
-    ResetComponent
+    ResetComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

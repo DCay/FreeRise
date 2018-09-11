@@ -43,7 +43,7 @@
           <div class="dropdown-menu mailbox animated slideInDown" ngbDropdownMenu>
             <ul>
               <li>
-                <div class="drop-title">Notifications</div>
+                <div class="drop-title">Известия</div>
               </li>
               <li>
                 <div class="message-center" [perfectScrollbar]="config">
@@ -58,7 +58,7 @@
                 </div>
               </li>
               <li>
-                <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i
+                <a class="nav-link text-center" href="javascript:void(0);"> <strong>Виж всички известия</strong> <i
                     class="fa fa-angle-right"></i> </a>
               </li>
             </ul>
@@ -77,7 +77,7 @@
           <div class="dropdown-menu mailbox animated slideInDown" ngbDropdownMenu>
             <ul>
               <li>
-                <div class="drop-title">You have 4 new messages</div>
+                <div class="drop-title">Имате 4 нови съобщения</div>
               </li>
               <li>
                 <div class="message-center" [perfectScrollbar]="config">
@@ -94,7 +94,7 @@
                 </div>
               </li>
               <li>
-                <a class="nav-link text-center" href="javascript:void(0);"> <strong>See all e-Mails</strong> <i class="fa fa-angle-right"></i>
+                <a class="nav-link text-center" href="javascript:void(0);"> <strong>Виж всички съобщения</strong> <i class="fa fa-angle-right"></i>
                 </a>
               </li>
             </ul>
@@ -223,19 +223,18 @@
                   <div class="u-img"><img src="assets/images/users/1.jpg" alt="user"></div>
                   <div class="u-text">
                     <h4>Steave Jobs</h4>
-                    <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View
-                      Profile</a>
+                    <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">Профил</a>
                   </div>
                 </div>
               </li>
               <li role="separator" class="divider"></li>
-              <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
-              <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
-              <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
+              <li><a routerLink="profile"><i class="ti-user"></i> Моят Профил</a></li>
+              <li><a href="#"><i class="ti-wallet"></i> Мойте Проекти</a></li>
+              <li><a href="#"><i class="ti-email"></i> Съобщения</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
+              <li><a href="#"><i class="ti-settings"></i> Найстройки</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+              <li><a href="#"><i class="fa fa-power-off"></i> Излизане</a></li>
             </ul>
           </div>
         </li>
