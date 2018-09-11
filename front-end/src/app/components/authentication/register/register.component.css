@@ -6,7 +6,7 @@
 form {
   margin: 0 auto;
   margin-bottom: 0;
-  width: 43%;
+  width: 42%;
   background: #F5FAFD;
   padding: 4%;
   box-shadow: 1px 1px 44px rgba(38, 63, 90, 0.09);
@@ -37,7 +37,7 @@ form {
   border: none;
   transition: 0.2s linear;
   background-color: #0479ec;
-  padding-bottom: 12px;
+  padding-bottom: 5px;
 }
 
 .register-btn:hover {
@@ -108,7 +108,7 @@ input:focus::placeholder {
   text-decoration: none;
 }
 
-.client-freelancer .col-xs-6:active {
+.client-freelancer .col-xs-6:checked {
   background: #238ff9;
   cursor: pointer;
 }
