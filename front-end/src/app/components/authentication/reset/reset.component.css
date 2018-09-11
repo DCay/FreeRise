@@ -1,0 +1,28 @@
+.container-fluid {
+  width: 100%;
+  margin: 9% auto;
+}
+
+form {
+  margin: 10% auto;
+  margin-bottom: 0;
+  width: 43%;
+  background: #F5FAFD;
+  padding: 4%;
+  box-shadow: 1px 1px 44px rgba(38, 63, 90, 0.09);
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.container-fluid input {
+  background: transparent;
+  border: none;
+  color: #8198a6;
+  padding-bottom: 18px;
+  border-bottom: 2px solid #dee6eb;
+  outline: transparent;
+}
+
+#usernameОrPassword {
+  width: 81%;
+}

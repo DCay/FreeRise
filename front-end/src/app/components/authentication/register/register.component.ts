@@ -21,6 +21,8 @@ export class RegisterComponent implements OnInit {
   model: RegisterModel;
   extractedTags: any[];
   freeLancerModel: RegisterFreelancerModel;
+  freelancerButton = "#9AC8E9";
+  clientButton = "#238ff9";
 
   public items = [
     { display: 'Jquery', value: 'Jquery' },
@@ -52,7 +54,6 @@ export class RegisterComponent implements OnInit {
     "email": new FormControl('', [Validators.required, Validators.email]),
     "skills": new FormControl('')
   })
-
 
 
   get diagnostics() {
@@ -104,6 +105,12 @@ export class RegisterComponent implements OnInit {
           // this.loginFailed = true;
           // this.errMessage = err['error']['description']
         })
+  }
+
+  changeColor(e) {
+    this.freelancerButton = this.freelancerButton === "#9AC8E9" ? " #238ff9" : "#9AC8E9";
+    this.clientButton = this.clientButton === "#9AC8E9" ? "#238ff9" : "#9AC8E9";
+
   }
 }
 
