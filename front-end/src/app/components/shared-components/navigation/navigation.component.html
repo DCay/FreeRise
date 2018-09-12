@@ -94,7 +94,8 @@
                 </div>
               </li>
               <li>
-                <a class="nav-link text-center" href="javascript:void(0);"> <strong>Виж всички съобщения</strong> <i class="fa fa-angle-right"></i>
+                <a class="nav-link text-center" href="javascript:void(0);"> <strong>Виж всички съобщения</strong> <i
+                    class="fa fa-angle-right"></i>
                 </a>
               </li>
             </ul>
@@ -167,7 +168,7 @@
 
               <li class="col-lg-3  m-b-30">
                 <h4 class="m-b-20">Свържете се с нас</h4>
-               Contact 
+                Contact
                 <form>
                   <div class="form-group">
                     <input type="text" class="form-control" id="exampleInputname1" placeholder="Въведете Име"> </div>
@@ -181,7 +182,7 @@
               </li>
               <li class="col-lg-3 col-xlg-4 m-b-30">
                 <h4 class="m-b-20">List style</h4>
-                 <!-- List style -->
+                <!-- List style -->
                 <ul class="list-style-none">
                   <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> You can give link</a></li>
                   <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Give link</a></li>
@@ -212,7 +213,7 @@
         <!-- ============================================================== -->
         <!-- Profile -->
         <!-- ============================================================== -->
-        <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
+        <li *ngIf="authService.checkIfLogged()" class="nav-item dropdown" ngbDropdown placement="bottom-right">
           <a ngbDropdownToggle class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="javascript:void(0)"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user"
               class="profile-pic" /></a>
@@ -226,6 +227,9 @@
                     <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">Профил</a>
                   </div>
                 </div>
+              </li>
+              <li *ngIf="!authService.checkIfLogged()" class="nav-item">
+                <a class="nav-link" routerLink="/login">Login</a>
               </li>
               <li role="separator" class="divider"></li>
               <li><a routerLink="profile"><i class="ti-user"></i> Моят Профил</a></li>
@@ -242,5 +246,3 @@
     </div>
   </nav>
 </header>
-
-

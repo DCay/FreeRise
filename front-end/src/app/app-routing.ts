@@ -6,12 +6,14 @@ import { LoginComponent } from './components/authentication/login/login.componen
 import { RegisterComponent } from './components/authentication/register/register.component';
 import { ResetComponent } from './components/authentication/reset/reset.component';
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'reset', component: ResetComponent },
   { path: 'profile', component: UserProfileComponent },
+  {path: 'home', component: HomeComponent},
   { path: '', component: LandingPageComponent },
   { path: '**', component: ErrorComponent }
 ]

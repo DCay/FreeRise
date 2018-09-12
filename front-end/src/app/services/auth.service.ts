@@ -46,7 +46,7 @@ export class AuthService {
     // }
 
     checkIfLogged() {
-        return this.currentAuthtoken === localStorage.getItem('authtoken');
+        return typeof(localStorage.getItem('authToken'));
     }
 
     get authToken() {

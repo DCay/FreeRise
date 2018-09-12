@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons, NgbPanelChangeEvent, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import * as $ from 'jquery';
+import { AuthService } from '../../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -12,7 +14,10 @@ export class NavigationComponent implements OnInit {
   name: string;
   public config: PerfectScrollbarConfigInterface = {};
 
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal,
+    private authService: AuthService,
+    private router: Router
+  ) {
 
   }
 
@@ -71,7 +76,8 @@ export class NavigationComponent implements OnInit {
   }];
 
   ngOnInit() {
-
+    console.log(this.authService.checkIfLogged())
+    
     var set = function () {
       var width = (window.innerWidth > 0) ? window.innerWidth : this.screen.width;
       var topOffset = 0;

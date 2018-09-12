@@ -13,6 +13,7 @@ import { LoginModel } from '../../../models/login.model';
 })
 export class LoginComponent implements OnInit {
   model: LoginModel;
+  data: object;
 
   constructor(
     private authService: AuthService,
@@ -23,8 +24,8 @@ export class LoginComponent implements OnInit {
 
 
   form = new FormGroup({
-    "username": new FormControl('',[Validators.required, Validators.pattern('[a-zA-Z0-9]+'), Validators.minLength(5), Validators.maxLength(15)]),
-    "password": new FormControl('',[Validators.required, Validators.minLength(5), Validators.maxLength(30)])
+    "username": new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z0-9]+'), Validators.minLength(5), Validators.maxLength(15)]),
+    "password": new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(30)])
   })
 
   ngOnInit() {
@@ -34,19 +35,31 @@ export class LoginComponent implements OnInit {
     return JSON.stringify(this.form.value);
   }
 
-  login() {
+  loginUser() {
     console.log(this.model)
     this.authService.login(this.model)
       .subscribe(
         data => {
           console.log(data)
+     
+          let tokenExtracted = JSON.parse(atob(data['authToken'].split('.')[1]));
+          let user = tokenExtracted.data.username;
+          let type = tokenExtracted.data.type;
+    
+
+          localStorage.setItem('authToken', tokenExtracted);
+          localStorage.setItem('userName', user);
+          localStorage.setItem('userType', type);
+
+          ///Auth: Bearer - usertoken
+          this.router.navigate(['/home'])
         },
         err => {
           console.log(err)
         })
   }
 
-  get f () {
+  get f() {
     return this.form.controls;
   }
 }
