@@ -1,3 +1,4 @@
+const fileUpload = require('express-fileupload');
 const express = require('express');
 const router = express.Router();
 const app = express();
@@ -15,6 +16,7 @@ routing.configure(router);
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(fileUpload());
 app.use(router);
 
 app.listen(port, () => console.log(serverInitializeListeningMessage.replace('{port}', port)));
