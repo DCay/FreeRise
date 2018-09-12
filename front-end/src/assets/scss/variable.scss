@@ -5,10 +5,10 @@ Email: niravjoshi87@gmail.com
 File: scss
 */
 // Variables
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
 
-$bodyfont:'Poppins', sans-serif;
-$headingfont:'Poppins', sans-serif; 
+$bodyfont: ('Open Sans', sans-serif);
+
+$headingfont:'Open Sans', sans-serif;
 
 
 /*Theme Colors*/
@@ -32,7 +32,7 @@ $themecolor-dark: #028ee1;
 $danger: #ef5350;
 $success: #26dad2;
 $warning: #ffb22b;
-$primary: #5c4ac7;
+$primary: #1E86ED;
 $info: #1976d2;
 $inverse: #2f3d4a;
 $muted: #99abb4;

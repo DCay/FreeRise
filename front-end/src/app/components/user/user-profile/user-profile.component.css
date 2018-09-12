@@ -1,0 +1,41 @@
+* {
+  font-weight: 500;
+}
+
+.fa {
+  font-size: 21px;
+}
+
+.social-icons {
+  margin-right: 6px;
+}
+
+.profile-btn {
+  font-size: 19px;
+  color: #fff;
+  border-radius: 7px;
+  border: none;
+  transition: 0.2s linear;
+  background-color: #0479ec;
+  padding: 6px 12px;
+}
+
+.profile-btn:hover {
+  background: #238ff9 !important;
+  cursor: pointer;
+}
+
+.delete-profile-btn {
+  background-color: #EF5350;
+  width: 80%;
+}
+
+.delete-profile-btn:hover {
+  background-color: #ff5956 !important;
+}
+
+.secondary-btn {
+  background: #99C7E9;
+  width: 80%;
+  /*padding: 6px 27px;*/
+}
