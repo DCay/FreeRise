@@ -1,9 +1,7 @@
-import { Injectable } from "@angular/core";
-import { HttpHeaders, HttpClient } from "@angular/common/http";
-import { RegisterModel } from "../models/register.model";
-import { LoginModel } from "../models/login.model";
-
-
+import {Injectable} from "@angular/core";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {RegisterModel} from "../models/register.model";
+import {LoginModel} from "../models/login.model";
 
 
 const registerClientUrl = `http://192.168.14.13:8000/api/users/client/register`;
@@ -35,7 +33,7 @@ export class AuthService {
 
     registerFreelancer(model){
         return this.http.post(registerFreelancerUrl,
-            JSON.stringify(model), this.options)
+            JSON.stringify(model), this.options);
     }
     
     private options = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
