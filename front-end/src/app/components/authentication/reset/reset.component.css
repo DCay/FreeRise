@@ -1,6 +1,6 @@
 .container-fluid {
   width: 100%;
-  margin: 9% auto;
+  margin: 4% auto;
 }
 
 form {
@@ -25,4 +25,16 @@ form {
 
 #usernameОrPassword {
   width: 81%;
+}
+
+#login-submit {
+  font-size: 19px;
+  color: #fff;
+  border-radius: 7px;
+  text-transform: uppercase;
+  border: none;
+  transition: 0.2s linear;
+  background-color: #0479ec;
+  padding: 6px 17px;
+  cursor: pointer;
 }
