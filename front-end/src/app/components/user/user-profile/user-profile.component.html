@@ -168,13 +168,13 @@
             </div>
 
             <!--<div class="form-group">-->
-              <!--<div class="force-to-the-bottom">-->
-                <!--<tag-input formControlName="skills" [(ngModel)]="freeLancerModel.skills" class="tag" [placeholder]="'Технология'" [secondaryPlaceholder]="'Технологични умения'">-->
-                  <!--<tag-input-dropdown [autocompleteItems]="items" [showDropdownIfEmpty]="true"-->
-                                      <!--[dynamicUpdate]="false">-->
-                  <!--</tag-input-dropdown>-->
-                <!--</tag-input>-->
-              <!--</div>-->
+            <!--<div class="force-to-the-bottom">-->
+            <!--<tag-input formControlName="skills" [(ngModel)]="freeLancerModel.skills" class="tag" [placeholder]="'Технология'" [secondaryPlaceholder]="'Технологични умения'">-->
+            <!--<tag-input-dropdown [autocompleteItems]="items" [showDropdownIfEmpty]="true"-->
+            <!--[dynamicUpdate]="false">-->
+            <!--</tag-input-dropdown>-->
+            <!--</tag-input>-->
+            <!--</div>-->
             <!--</div>-->
 
 
@@ -238,7 +238,7 @@
                   </div>
                 </div>
                 <div class="col-5 ml-3">
-                <h5 class="h5 my-3">Редактиране на контакти</h5>
+                  <h5 class="h5 my-3">Редактиране на контакти</h5>
 
                   <div class="form-group">
                     <label class="col-md-12">LINKEDIN ПРОФИЛ</label>
@@ -262,7 +262,7 @@
                   </div>
 
                   <div class="form-group">
-                    <label class="col-md-12">LINKEDIN ПРОФИЛ</label>
+                    <label class="col-md-12">INSTAGRAM ПРОФИЛ</label>
                     <div class="col-md-12">
                       <input type="text" class="form-control form-control-line">
                     </div>
@@ -270,22 +270,124 @@
 
                   <div class="form-group">
                     <div class="col-sm-12">
-                      <button class="btn profile-btn secondary-btn">Промяна на имейл</button>
+                      <button class="btn profile-btn secondary-btn" data-toggle="modal"
+                              data-target="#change-email-modal">
+                        Промяна на имейл
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Change Email Modal -->
+                  <div class="modal fade" id="change-email-modal" tabindex="-1" role="dialog"
+                       aria-labelledby="emailModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h2 class="modal-title" id="emailModalLabel">Смяна на имейл</h2>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+
+                          <div class="form-group">
+                            <input class="form-control mr-5" type="password" id="password" placeholder="Парола">
+                          </div>
+
+                          <div class="form-group">
+                            <input class="form-control" type="email" formControlName="email" tabindex="5"
+                                   placeholder="Имейл">
+                          </div>
+
+                          <div class="form-group">
+                            <input class="form-control" type="email" formControlName="email" tabindex="5"
+                                   placeholder="Потвърди имейла">
+                          </div>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Затвори</button>
+                          <button type="button" class="btn btn-primary">Запази</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <button class="btn profile-btn secondary-btn" data-toggle="modal"
+                              data-target="#change-password-modal">Промяна на парола
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Change password Modal -->
+                  <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog"
+                       aria-labelledby="passwordModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h2 class="modal-title" id="passwordModalLabel">Смяна на парола</h2>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+
+                          <div class="form-group">
+                            <input class="form-control mr-5" type="password" id="old-password" placeholder="Стара парола">
+                          </div>
+
+                          <div class="form-group">
+                            <input class="form-control mr-5" type="password" id="new-password" placeholder="Нова парола">
+                          </div>
+
+                          <div class="form-group">
+                            <input class="form-control mr-5" type="password" id="repeat-password" placeholder="Потвърди новата парола">
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Затвори</button>
+                          <button type="button" class="btn btn-primary">Запази</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <div class="col-sm-12">
-                      <button class="btn profile-btn secondary-btn">Промяна на парола</button>
+                      <button class="btn profile-btn delete-profile-btn" data-toggle="modal"
+                              data-target="#delete-account-modal">Изтрий моя профил</button>
                     </div>
                   </div>
 
-                  <div class="form-group">
-                    <div class="col-sm-12">
-                      <button class="btn profile-btn delete-profile-btn">Изтрий моя профил</button>
+                  <!-- Delete User Modal -->
+                  <div class="modal fade" id="delete-account-modal" tabindex="-1" role="dialog"
+                       aria-labelledby="deleteModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h2 class="modal-title" id="deleteModalLabel">Изтриване на профил</h2>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                        <p class="text-left delete-user-text">
+                          Ако изтриете профила си, ще изгубите всички данни за обявите и проектите, които имате. Повече няма да имате достъп до администрацията на вашите проекти.
+
+                          Сигурни ли сте, че искате да изтриете профила си?
+                        </p>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Отказ</button>
+                          <button type="button" class="btn btn-danger">Потвърждавам</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
-
 
                 </div>
 
