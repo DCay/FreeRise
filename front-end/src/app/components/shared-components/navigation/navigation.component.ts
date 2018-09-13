@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })
+
 export class NavigationComponent implements OnInit {
   name: string;
   public config: PerfectScrollbarConfigInterface = {};
@@ -18,7 +19,6 @@ export class NavigationComponent implements OnInit {
     private authService: AuthService,
     private router: Router
   ) {
-
   }
 
   // This is for Notifications
@@ -77,36 +77,32 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit() {
 
-    var set = function () {
-      var width = (window.innerWidth > 0) ? window.innerWidth : this.screen.width;
-      var topOffset = 0;
+    const set = function () {
+      const width = (window.innerWidth > 0) ? window.innerWidth : this.screen.width;
+      const topOffset = 0;
       if (width < 1170) {
-        $("#main-wrapper").addClass("mini-sidebar");
+        $('#main-wrapper').addClass('mini-sidebar');
       } else {
-        $("#main-wrapper").removeClass("mini-sidebar");
+        $('#main-wrapper').removeClass('mini-sidebar');
       }
-
     };
     $(window).ready(set);
-    $(window).on("resize", set);
+    $(window).on('resize', set);
 
-
-    $(".search-box a, .search-box .app-search .srh-btn").on('click', function () {
-      $(".app-search").toggle(200);
+    $('.search-box a, .search-box .app-search .srh-btn').on('click', function () {
+      $('.app-search').toggle(200);
     });
 
-
-    $("body").trigger("resize");
+    $('body').trigger('resize');
   }
-
 
   logout() {
     this.authService.logout()
       .subscribe(data => {
-        console.log(data)
+        console.log(data);
         localStorage.clear();
-        this.authService.authToken = "";
-        this.router.navigate(['/login'])
-      })
+        this.authService.authToken = '';
+        this.router.navigate(['/login']);
+      });
   }
 }

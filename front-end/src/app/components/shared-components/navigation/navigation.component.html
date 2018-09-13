@@ -1,51 +1,42 @@
 <header class="topbar">
-  <nav class="navbar top-navbar navbar-expand-md navbar-light">
-    <!-- ============================================================== -->
-    <!-- Logo -->
-    <!-- ============================================================== -->
-    <div class="navbar-header">
-      <a class="navbar-brand" href="index.html">
+  <nav class="navbar top-navbar navbar-expand-md navbar-light container-fluid m-3">
+    <div class="navbar-header col-3">
+      <a class="navbar-brand">
         <!-- Logo icon --><b>
-          <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-          <!-- Dark Logo icon -->
-          <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
-          <!-- Light Logo icon -->
-          <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
-        </b>
-        <!--End Logo icon -->
-        <!-- Logo text --><span>
-          <!-- dark Logo text -->
-          <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
-          <!-- Light Logo text -->
-          <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+        <!--<img src="../../../../assets/images/logo/brand/freerise.png" alt="homepage" class="main-logo"/>-->
+      </b>
+        <img src="../../../../assets/images/logo/logo-footer.png" alt="homepage" class="main-logo"/>
+      </a>
     </div>
-    <!-- ============================================================== -->
-    <!-- End Logo -->
-    <!-- ============================================================== -->
 
     <!-- NOT LOGGED IN NAV DIV -->
-    <div *ngIf="!authService.checkIfLogged()" class="navbar-collapse">
-      <p>UNLOGGED NAV</p>
+    <div *ngIf="!authService.checkIfLogged()" class="navbar-collapse" id="main-navigation">
+      <ul class="col-8">
+        <li><a href="#">Как работи?</a></li>
+        <li><a routerLink="contact-us">Контакти</a></li>
+        <li><a routerLink="login">Публикувай обява</a></li>
+      </ul>
+
+      <ul class="col-3">
+        <li><a routerLink="register">Регистрация</a></li>
+        <li><a routerLink="login" class="login-btn">Вход</a></li>
+      </ul>
     </div>
 
     <!-- LOGGED IN NAV DIV -->
     <div *ngIf="authService.checkIfLogged()" class="navbar-collapse">
       <ul class="navbar-nav mr-auto mt-md-0">
-        <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-lg-up text-muted waves-effect waves-dark"
-            href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+        <li class="nav-item m-l-10"><a class="nav-link sidebartoggler hidden-lg-up text-muted waves-effect waves-dark"
+                                       href="javascript:void(0)"><i class="ti-menu"></i></a></li>
       </ul>
       <!-- ============================================================== -->
       <!-- toggle and nav items -->
       <!-- ============================================================== -->
       <ul class="navbar-nav ml-auto mt-md-0">
-        <!-- This is  -->
-        <!-- ============================================================== -->
-        <!-- Comment -->
-        <!-- ============================================================== -->
         <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
           <a ngbDropdownToggle class="nav-link text-muted text-muted waves-effect waves-dark" href="javascript:void(0)">
             <i class="mdi mdi-message"></i>
-            <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+            <div class="notify"><span class="heartbit"></span> <span class="point"></span></div>
           </a>
           <div class="dropdown-menu mailbox animated slideInDown" ngbDropdownMenu>
             <ul>
@@ -59,27 +50,22 @@
                     <div class="round {{notification.round}}"><i class="{{notification.icon}}"></i></div>
                     <div class="mail-contnet">
                       <h5>{{notification.title}}</h5> <span class="mail-desc">{{notification.subject}}</span> <span
-                        class="time">{{notification.time}}</span>
+                      class="time">{{notification.time}}</span>
                     </div>
                   </a>
                 </div>
               </li>
               <li>
                 <a class="nav-link text-center" href="javascript:void(0);"> <strong>Виж всички известия</strong> <i
-                    class="fa fa-angle-right"></i> </a>
+                  class="fa fa-angle-right"></i> </a>
               </li>
             </ul>
           </div>
         </li>
-        <!-- ============================================================== -->
-        <!-- End Comment -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Messages -->
-        <!-- ============================================================== -->
         <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
-          <a ngbDropdownToggle class="nav-link text-muted waves-effect waves-dark" href="javascript:void(0)"> <i class="mdi mdi-email"></i>
-            <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
+          <a ngbDropdownToggle class="nav-link text-muted waves-effect waves-dark" href="javascript:void(0)"> <i
+            class="mdi mdi-email"></i>
+            <div class="notify"><span class="heartbit"></span> <span class="point"></span></div>
           </a>
           <div class="dropdown-menu mailbox animated slideInDown" ngbDropdownMenu>
             <ul>
@@ -89,7 +75,7 @@
               <li>
                 <div class="message-center" [perfectScrollbar]="config">
                   <a href="#" *ngFor="let mymessage of mymessages">
-                    <div class="user-img"> <img src="{{mymessage.useravatar}}" alt="user" class="img-circle" width="40">
+                    <div class="user-img"><img src="{{mymessage.useravatar}}" alt="user" class="img-circle" width="40">
                       <span class="profile-status {{mymessage.status}} pull-right"></span>
                     </div>
                     <div class="mail-contnet">
@@ -102,20 +88,16 @@
               </li>
               <li>
                 <a class="nav-link text-center" href="javascript:void(0);"> <strong>Виж всички съобщения</strong> <i
-                    class="fa fa-angle-right"></i>
+                  class="fa fa-angle-right"></i>
                 </a>
               </li>
             </ul>
           </div>
         </li>
-        <!-- ============================================================== -->
-        <!-- End Messages -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Contact Us -->
-        <!-- ============================================================== -->
-        <li class="nav-item dropdown mega-dropdown" ngbDropdown [autoClose]="false"> <a ngbDropdownToggle class="nav-link text-muted waves-effect waves-dark"
-            href="javascript:void(0)"><i class="mdi mdi-view-grid"></i></a>
+        <li class="nav-item dropdown mega-dropdown" ngbDropdown [autoClose]="false"><a ngbDropdownToggle
+                                                                                       class="nav-link text-muted waves-effect waves-dark"
+                                                                                       href="javascript:void(0)"><i
+          class="mdi mdi-view-grid"></i></a>
           <div class="dropdown-menu animated slideInDown" ngbDropdownMenu>
             <ul class="mega-dropdown-menu row">
               <li class="col-lg-3 col-xlg-2 m-b-30">
@@ -178,9 +160,9 @@
                 Contact
                 <form>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputname1" placeholder="Въведете Име"> </div>
+                    <input type="text" class="form-control" id="exampleInputname1" placeholder="Въведете Име"></div>
                   <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Въведете Имейл"> </div>
+                    <input type="email" class="form-control" placeholder="Въведете Имейл"></div>
                   <div class="form-group">
                     <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Съобщение"></textarea>
                   </div>
@@ -201,29 +183,17 @@
             </ul>
           </div>
         </li>
-
-        <!-- ============================================================== -->
-        <!-- End Messages -->
-        <!-- ============================================================== -->
       </ul>
       <!-- ============================================================== -->
       <!-- User profile and search -->
       <!-- ============================================================== -->
       <ul class="navbar-nav my-lg-0">
-        <!-- ============================================================== -->
-        <!-- Search -->
-        <!-- ============================================================== -->
-        <!-- <li class="nav-item hidden-sm-down search-box" > <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
-                 <form class="app-search">
-                     <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
-            </li> -->
-        <!-- ============================================================== -->
-        <!-- Profile -->
-        <!-- ============================================================== -->
         <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="javascript:void(0)"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg" alt="user"
-              class="profile-pic" /></a>
+          <a ngbDropdownToggle class="nav-link dropdown-toggle text-muted waves-effect waves-dark"
+             href="javascript:void(0)"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/users/1.jpg"
+                                                                                    alt="user"
+                                                                                    class="profile-pic"/></a>
           <div class="dropdown-menu animated slideInDown" ngbDropdownMenu>
             <ul class="dropdown-user">
               <li>
@@ -231,7 +201,8 @@
                   <div class="u-img"><img src="assets/images/users/1.jpg" alt="user"></div>
                   <div class="u-text">
                     <h4>Steave Jobs</h4>
-                    <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">Профил</a>
+                    <p class="text-muted">varun@gmail.com</p><a href="pages-profile.html"
+                                                                class="btn btn-rounded btn-danger btn-sm">Профил</a>
                   </div>
                 </div>
               </li>

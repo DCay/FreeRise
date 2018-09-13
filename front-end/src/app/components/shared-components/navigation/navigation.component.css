@@ -1,0 +1,42 @@
+#main-navigation {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 2%;
+  font-weight: 500;
+}
+
+#main-navigation li {
+  display: inline-block;
+  margin-right: 20px;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 6px;
+  position: relative;
+  transition: 0.2s linear;
+}
+
+#main-navigation li a {
+  color: #7782aa;
+}
+
+#main-navigation li a:hover {
+  /*border-bottom: 2px solid #7782aa;*/
+  color: #0479ec;
+  cursor: pointer;
+}
+
+.main-logo {
+  width: 69%;
+}
+
+.login-btn {
+  background: #0479ec none;
+  border-radius: 7px;
+  box-shadow: 1px 1px 11px rgba(98, 129, 157, 0.4);
+  color: white !important;
+  padding: 6px 16px;
+}
+
+.login-btn:hover {
+  background: #238FF9;
+  cursor: pointer;
+}
