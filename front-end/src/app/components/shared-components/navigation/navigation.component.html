@@ -22,7 +22,14 @@
     <!-- ============================================================== -->
     <!-- End Logo -->
     <!-- ============================================================== -->
-    <div class="navbar-collapse">
+
+    <!-- NOT LOGGED IN NAV DIV -->
+    <div *ngIf="!authService.checkIfLogged()" class="navbar-collapse">
+      <p>UNLOGGED NAV</p>
+    </div>
+
+    <!-- LOGGED IN NAV DIV -->
+    <div *ngIf="authService.checkIfLogged()" class="navbar-collapse">
       <ul class="navbar-nav mr-auto mt-md-0">
         <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-lg-up text-muted waves-effect waves-dark"
             href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
@@ -94,7 +101,8 @@
                 </div>
               </li>
               <li>
-                <a class="nav-link text-center" href="javascript:void(0);"> <strong>Виж всички съобщения</strong> <i class="fa fa-angle-right"></i>
+                <a class="nav-link text-center" href="javascript:void(0);"> <strong>Виж всички съобщения</strong> <i
+                    class="fa fa-angle-right"></i>
                 </a>
               </li>
             </ul>
@@ -167,7 +175,7 @@
 
               <li class="col-lg-3  m-b-30">
                 <h4 class="m-b-20">Свържете се с нас</h4>
-               Contact 
+                Contact
                 <form>
                   <div class="form-group">
                     <input type="text" class="form-control" id="exampleInputname1" placeholder="Въведете Име"> </div>
@@ -181,7 +189,7 @@
               </li>
               <li class="col-lg-3 col-xlg-4 m-b-30">
                 <h4 class="m-b-20">List style</h4>
-                 <!-- List style -->
+                <!-- List style -->
                 <ul class="list-style-none">
                   <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> You can give link</a></li>
                   <li><a href="javascript:void(0)"><i class="fa fa-check text-success"></i> Give link</a></li>
@@ -227,6 +235,9 @@
                   </div>
                 </div>
               </li>
+              <li *ngIf="!authService.checkIfLogged()" class="nav-item">
+                <a class="nav-link" routerLink="/login">Login</a>
+              </li>
               <li role="separator" class="divider"></li>
               <li><a routerLink="profile"><i class="ti-user"></i> Моят Профил</a></li>
               <li><a href="#"><i class="ti-wallet"></i> Мойте Проекти</a></li>
@@ -234,7 +245,7 @@
               <li role="separator" class="divider"></li>
               <li><a href="#"><i class="ti-settings"></i> Найстройки</a></li>
               <li role="separator" class="divider"></li>
-              <li><a href="#"><i class="fa fa-power-off"></i> Излизане</a></li>
+              <li><a (click)="logout()"><i class="fa fa-power-off"></i> Излизане</a></li>
             </ul>
           </div>
         </li>
@@ -242,5 +253,3 @@
     </div>
   </nav>
 </header>
-
-

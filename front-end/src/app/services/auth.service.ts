@@ -1,13 +1,13 @@
-import {Injectable} from "@angular/core";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {RegisterModel} from "../models/register.model";
-import {LoginModel} from "../models/login.model";
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { RegisterModel } from "../models/register.model";
+import { LoginModel } from "../models/login.model";
 
 
 const registerClientUrl = `http://192.168.14.13:8000/api/users/client/register`;
 const registerFreelancerUrl = `http://192.168.14.13:8000/api/users/freelancer/register`
 const loginUrl = `http://192.168.14.13:8000/api/users/login`;
-// const logoutUrl = `https://baas.kinvey.com/user/${appKey}/_logout`;
+const logoutUrl = `http://192.168.14.13:8000/api/users/logout`;
 
 
 @Injectable({
@@ -16,6 +16,7 @@ const loginUrl = `http://192.168.14.13:8000/api/users/login`;
 
 export class AuthService {
     private currentAuthtoken: string;
+    private options = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
 
     constructor(private http: HttpClient) {
 
@@ -31,20 +32,18 @@ export class AuthService {
             JSON.stringify(model), this.options);
     }
 
-    registerFreelancer(model){
+    registerFreelancer(model) {
         return this.http.post(registerFreelancerUrl,
             JSON.stringify(model), this.options);
     }
+
+    logout() {
+        return this.http.post(logoutUrl, this.options)
+    }
     
-    private options = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
-
-    // logout() {
-    //     return this.http.post(logoutUrl,
-    //         {});
-    // }
-
     checkIfLogged() {
-        return this.currentAuthtoken === localStorage.getItem('authtoken');
+        if (localStorage.getItem('authToken')) return true;
+        return false
     }
 
     get authToken() {

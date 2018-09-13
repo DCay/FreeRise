@@ -5,7 +5,7 @@
         <div class="panel-body">
           <div class="row">
             <div class="col-lg-12">
-              <form id="login-form" [formGroup]="form" (ngSubmit)="login()" role="form" style="display: block;">
+              <form id="login-form" [formGroup]="form" (ngSubmit)="loginUser()" role="form" style="display: block;">
                 <h1 class="pb-4">Вход</h1>
                 <div class="form-group">
                   <input type="text" formControlName="username" [(ngModel)]="model.username" tabindex="1"
