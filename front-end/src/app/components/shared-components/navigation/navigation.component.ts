@@ -76,8 +76,7 @@ export class NavigationComponent implements OnInit {
   }];
 
   ngOnInit() {
-    console.log(this.authService.checkIfLogged())
-    
+
     var set = function () {
       var width = (window.innerWidth > 0) ? window.innerWidth : this.screen.width;
       var topOffset = 0;
@@ -100,4 +99,14 @@ export class NavigationComponent implements OnInit {
     $("body").trigger("resize");
   }
 
+
+  logout() {
+    this.authService.logout()
+      .subscribe(data => {
+        console.log(data)
+        localStorage.clear();
+        this.authService.authToken = "";
+        this.router.navigate(['/login'])
+      })
+  }
 }
