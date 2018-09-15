@@ -41,13 +41,13 @@ export class LoginComponent implements OnInit {
       .subscribe(
         data => {
           console.log(data)
-     
+
           let tokenExtracted = JSON.parse(atob(data['authToken'].split('.')[1]));
           let user = tokenExtracted.data.username;
           let type = tokenExtracted.data.type;
-    
 
-          localStorage.setItem('authToken', tokenExtracted);
+
+          localStorage.setItem('authToken', data['authToken']);
           localStorage.setItem('userName', user);
           localStorage.setItem('userType', type);
 

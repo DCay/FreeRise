@@ -84,7 +84,7 @@ export class RegisterComponent implements OnInit {
         },
         err => {
           console.log(err)
-          // this.form.reset();
+          // this.form.reset();dada
           // this.loginFailed = true;
           // this.errMessage = err['error']['description']
         })

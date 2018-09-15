@@ -4,10 +4,14 @@ import { RegisterModel } from "../models/register.model";
 import { LoginModel } from "../models/login.model";
 
 
-const registerClientUrl = `http://192.168.14.13:8000/api/users/client/register`;
-const registerFreelancerUrl = `http://192.168.14.13:8000/api/users/freelancer/register`
-const loginUrl = `http://192.168.14.13:8000/api/users/login`;
-const logoutUrl = `http://192.168.14.13:8000/api/users/logout`;
+//Ivo DatabaseURL - http://192.168.14.13:8000
+//My DatabaseUrl - http://localhost:8000
+const DATABASE_URL = 'http://localhost:8000';
+
+const registerClientUrl = `${DATABASE_URL}/api/users/client/register`;
+const registerFreelancerUrl = `${DATABASE_URL}/api/users/freelancer/register`
+const loginUrl = `${DATABASE_URL}/api/users/login`;
+const logoutUrl = `${DATABASE_URL}/api/users/logout`;
 
 
 @Injectable({
@@ -24,23 +28,25 @@ export class AuthService {
 
     login(model: LoginModel) {
         return this.http.post(loginUrl,
-            JSON.stringify(model), this.options);
+            JSON.stringify(model));
     }
 
     registerClient(model: RegisterModel) {
+
         return this.http.post(registerClientUrl,
-            JSON.stringify(model), this.options);
+            JSON.stringify(model));
     }
 
     registerFreelancer(model) {
         return this.http.post(registerFreelancerUrl,
-            JSON.stringify(model), this.options);
+            JSON.stringify(model));
     }
 
     logout() {
-        return this.http.post(logoutUrl, this.options)
+        return this.http.post(logoutUrl,
+            {});
     }
-    
+
     checkIfLogged() {
         if (localStorage.getItem('authToken')) return true;
         return false
