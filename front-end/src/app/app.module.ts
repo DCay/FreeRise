@@ -24,6 +24,7 @@ import { RegisterJqueryDirective } from './directives/register-jquery.directive'
 import { ResetComponent } from './components/authentication/reset/reset.component';
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
 import { HomeComponent } from './components/home/home.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 
 
@@ -40,7 +41,8 @@ import { HomeComponent } from './components/home/home.component';
     RegisterJqueryDirective,
     ResetComponent,
     UserProfileComponent,
-    HomeComponent
+    HomeComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,
