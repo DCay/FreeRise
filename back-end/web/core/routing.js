@@ -15,14 +15,26 @@ let publicRoutes = {
     }
 };
 
+let allowedMethods = {
+    methods: [
+        'GET',
+        'POST',
+        'PUT',
+        'DELETE'
+    ],
+    contains: function (method) {
+        return this.methods.filter(m => m === method).length > 0;
+    }
+}
+
 function configure(router) {
     router.use((req, res, next) => {
         res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
 
         let token = req.header('Authorization') || 'Invalid';
 
-        if(!publicRoutes.contains(req.url)) {
+        if(!publicRoutes.contains(req.url) && allowedMethods.contains(req.method)) {
             authService.verify(token, req, res, next);
         } else {
             next();
