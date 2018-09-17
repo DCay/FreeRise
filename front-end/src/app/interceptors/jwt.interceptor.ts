@@ -10,9 +10,10 @@ export class JwtInterceptor implements HttpInterceptor {
         let userToken = localStorage.getItem('authToken');
 
         if (user && userToken) {
+            console.log('works')
             request = request.clone({
                 setHeaders: {
-                    'Authorization': `Bearer ${userToken}`,
+                    Authorization: `Bearer ${userToken}`,
                     'Content-Type': 'application/json'
                 }
             });

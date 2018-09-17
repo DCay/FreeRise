@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./navigation.component.css']
 })
 
+
 export class NavigationComponent implements OnInit {
   name: string;
   public config: PerfectScrollbarConfigInterface = {};

@@ -271,6 +271,14 @@
                             <div class="form-group">
                               <input formControlName="password" [(ngModel)]="changeEmailModel.password" class="form-control mr-5"
                                 type="password" id="password" placeholder="Парола">
+                              <div *ngIf="changeEmailControls.password.touched && changeEmailControls.password.dirty">
+                                <div class="alert alert-danger" *ngIf="changeEmailControls.password.errors?.required">
+                                  Password is Required</div>
+                                <div class="alert alert-danger" *ngIf="changeEmailControls.password.errors?.minlength">Password
+                                  must be at least 5 characters</div>
+                                <div class="alert alert-danger" *ngIf="changeEmailControls.password.errors?.maxlength">Password
+                                  must not exceed 30 characters</div>
+                              </div>
                             </div>
 
                             <div class="form-group">
@@ -330,24 +338,63 @@
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
-                        <div class="modal-body">
+                        <form [formGroup]="changePasswordForm" (ngSubmit)="changePassword()">
+                          <div class="modal-body">
 
-                          <div class="form-group">
-                            <input class="form-control mr-5" type="password" id="old-password" placeholder="Стара парола">
+                            <div class="form-group">
+                              <input formControlName="oldPassword" [(ngModel)]="changePasswordModel.oldPassword" class="form-control mr-5"
+                                type="password" id="old-password" placeholder="Стара парола">
+                              <div *ngIf="changePasswordControls.oldPassword.touched && changePasswordControls.oldPassword.dirty">
+                                <div class="alert alert-danger" *ngIf="changePasswordControls.oldPassword.errors?.required">
+                                  Old Password is Required</div>
+                                <div class="alert alert-danger" *ngIf="changePasswordControls.oldPassword.errors?.minlength">Old
+                                  Password
+                                  must be at least 5 characters</div>
+                                <div class="alert alert-danger" *ngIf="changePasswordControls.oldPassword.errors?.maxlength">Old
+                                  Password
+                                  must not exceed 30 characters</div>
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <input formControlName="newPassword" [(ngModel)]="changePasswordModel.newPassword" class="form-control mr-5"
+                                type="password" id="new-password" placeholder="Нова парола">
+                              <div *ngIf="changePasswordControls.newPassword.touched && changePasswordControls.newPassword.dirty">
+                                <div class="alert alert-danger" *ngIf="changePasswordControls.newPassword.errors?.required">
+                                  New Password is Required</div>
+                                <div class="alert alert-danger" *ngIf="changePasswordControls.newPassword.errors?.mustMatch">Passwords
+                                  Must Match</div>
+                                <div class="alert alert-danger" *ngIf="changePasswordControls.newPassword.errors?.minlength">New
+                                  Password
+                                  must be at least 5 characters</div>
+                              </div>
+                              <div class="alert alert-danger" *ngIf="changePasswordControls.newPassword.errors?.maxlength">New
+                                Password
+                                must not exceed 30 characters</div>
+                            </div>
                           </div>
 
                           <div class="form-group">
-                            <input class="form-control mr-5" type="password" id="new-password" placeholder="Нова парола">
+                            <input formControlName="confirmNewPassword" [(ngModel)]="changePasswordModel.confirmNewPassword"
+                              class="form-control mr-5" type="password" id="repeat-password" placeholder="Потвърди новата парола">
+                            <div *ngIf="changePasswordControls.confirmNewPassword.touched && changePasswordControls.confirmNewPassword.dirty">
+                              <div class="alert alert-danger" *ngIf="changePasswordControls.confirmNewPassword.errors?.required">
+                                New Password is Required</div>
+                              <div class="alert alert-danger" *ngIf="changePasswordControls.confirmNewPassword.errors?.minlength">New
+                                New Password
+                                must be at least 5 characters</div>
+                              <div class="alert alert-danger" *ngIf="changePasswordControls.confirmNewPassword.errors?.maxlength">New
+                                New Password
+                                must not exceed 30 characters</div>
+                            </div>
                           </div>
 
-                          <div class="form-group">
-                            <input class="form-control mr-5" type="password" id="repeat-password" placeholder="Потвърди новата парола">
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Затвори</button>
+                            <button type="submit" class="btn btn-primary">Запази</button>
                           </div>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Затвори</button>
-                          <button type="button" class="btn btn-primary">Запази</button>
-                        </div>
+
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -370,27 +417,55 @@
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
-                        <div class="modal-body">
-                          <p class="text-left delete-user-text">
-                            Ако изтриете профила си, ще изгубите всички данни за обявите и проектите, които имате.
-                            Повече няма да имате достъп до администрацията на вашите проекти.
+                        <form [formGroup]="deleteProfileForm" (ngSubmit)="deleteProfile()">
 
-                            Сигурни ли сте, че искате да изтриете профила си?
-                          </p>
+                          <div class="modal-body">
+                            <p class="text-left delete-user-text">
+                              Ако изтриете профила си, ще изгубите всички данни за обявите и проектите, които имате.
+                              Повече няма да имате достъп до администрацията на вашите проекти.
 
-                          <div class="form-group">
-                            <input class="form-control mr-5" type="password" placeholder="Парола">
+                              Сигурни ли сте, че искате да изтриете профила си?
+                            </p>
+
+                            <div class="form-group">
+                              <input formControlName="password" [(ngModel)]="deleteProfileModel.password" class="form-control mr-5"
+                                type="password" placeholder="Парола">
+                                <div *ngIf="deleteProfileControls.password.touched && deleteProfileControls.password.dirty">
+                                  <div class="alert alert-danger" *ngIf="deleteProfileControls.password.errors?.required">
+                                    New Password is Required</div>
+                                  <div class="alert alert-danger" *ngIf="deleteProfileControls.password.errors?.mustMatch">Passwords
+                                    Must Match</div>
+                                  <div class="alert alert-danger" *ngIf="deleteProfileControls.password.errors?.minlength">New
+                                    Password
+                                    must be at least 5 characters</div>
+                                </div>
+                                <div class="alert alert-danger" *ngIf="deleteProfileControls.password.errors?.maxlength">New
+                                  Password
+                                  must not exceed 30 characters</div>
+                            </div>
+
+                            <div class="form-group">
+                              <input formControlName="confirmPassword" [(ngModel)]="deleteProfileModel.confirmPassword"
+                                class="form-control mr-5" type="password" placeholder="Повтори парола">
+                                <div *ngIf="deleteProfileControls.confirmPassword.touched && deleteProfileControls.confirmPassword.dirty">
+                                  <div class="alert alert-danger" *ngIf="deleteProfileControls.confirmPassword.errors?.required">
+                                    New Password is Required</div>
+                                
+                                  <div class="alert alert-danger" *ngIf="deleteProfileControls.confirmPassword.errors?.minlength">New
+                                    Password
+                                    must be at least 5 characters</div>
+                                </div>
+                                <div class="alert alert-danger" *ngIf="deleteProfileControls.confirmPassword.errors?.maxlength">New
+                                  Password
+                                  must not exceed 30 characters</div>
+                            </div>
+
                           </div>
-
-                          <div class="form-group">
-                            <input class="form-control mr-5" type="password" placeholder="Повтори парола">
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Отказ</button>
+                            <button type="submit" class="btn btn-danger">Потвърждавам</button>
                           </div>
-
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Отказ</button>
-                          <button type="button" class="btn btn-danger">Потвърждавам</button>
-                        </div>
+                        </form>
                       </div>
                     </div>
                   </div>
