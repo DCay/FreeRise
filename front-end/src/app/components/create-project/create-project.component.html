@@ -1,0 +1,56 @@
+<h1>Create Project</h1>
+<div class="container">
+  <div class="row">
+    <form [formGroup]="createProjectForm" (ngSubmit)="createProject()">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label">Срок За Оферти</label>
+          <select class="form-control custom-select" data-placeholder="Избери Срок" tabindex="1">
+            <option value="Category 1">7 Дни</option>
+            <option value="Category 2">14 Дни</option>
+            <option value="Category 3">1 Месец</option>
+          </select>
+        </div>
+      </div>
+      <!--/span-->
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label">Категория</label>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio11" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio11">Уеб</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio22" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio22">Дизайн</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio33" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio33">Маркетинг</label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="projectTitle">Заглавие на Проекта</label>
+          <input type="text" class="form-control" id="projectTitle" placeholder="Заглавие на проекта:">
+        </div>
+      </div>
+
+
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Basic Editor</h4>
+            <h6 class="card-subtitle">quill editor with angular and TypeScript. ngx-quill is the new angular 2 and
+              beyond
+              implementation of ngQuill. <a href="https://github.com/KillerCodeMonkey/ngx-quill" target="_blank">Official
+                website</a></h6>
+            <quill-editor [style]="{height: '200px'}"></quill-editor>
+          </div>
+        </div>
+      </div>
+      <!--/span-->
+    </form>
+  </div>
+</div>

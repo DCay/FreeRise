@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { QuillModule } from 'ngx-quill';
 
 
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import { ResetComponent } from './components/authentication/reset/reset.componen
 import { UserProfileComponent } from './components/user/user-profile/user-profile.component';
 import { HomeComponent } from './components/home/home.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { CreateProjectComponent } from './components/create-project/create-project.component';
 
 
 
@@ -42,7 +44,8 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
     ResetComponent,
     UserProfileComponent,
     HomeComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    CreateProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
     ReactiveFormsModule.withConfig({ warnOnNgModelWithFormControl: 'never' }), //DEPRICATED FORM MODEL
     HttpClientModule,
     PerfectScrollbarModule,
-    NgbModule
+    NgbModule,
+    QuillModule
   ],
   providers: [
     AuthService,
