@@ -25,6 +25,7 @@ const INCORRECT_EMAIL_MESSAGE = 'There is no user with the given email.';
 const INCORRECT_PASSWORD_MESSAGE = 'The password you have entered is incorrect.';
 const INCORRECT_OLD_PASSWORD_MESSAGE = 'The old password you have entered is incorrect.';
 const NEW_PASSWORDS_DO_NOT_MATCH_MESSAGE = 'New passwords do not match.';
+const PASSWORDS_DO_NOT_MATCH_MESSAGE = 'The given passwords do not match.';
 
 function registerFreelancer(req, res) {
     let userData = {
@@ -115,13 +116,16 @@ function changeUserPassword(req, res) {
         confirmNewPassword: req.body.confirmNewPassword
     };
 
-    if(userData.newPassword !== userData.confirmNewPassword) {
+    if (userData.newPassword !== userData.confirmNewPassword) {
         responseBuilderService.badRequest(res, {message: NEW_PASSWORDS_DO_NOT_MATCH_MESSAGE});
         return;
     }
 
-    User.findOneAndUpdate({username: req.auth.username, password: userData.oldPassword}, {password: userData.newPassword}).then(u => {
-        if(!u) {
+    User.findOneAndUpdate({
+        username: req.auth.username,
+        password: userData.oldPassword
+    }, {password: userData.newPassword}).then(u => {
+        if (!u) {
             responseBuilderService.badRequest(res, {message: INCORRECT_OLD_PASSWORD_MESSAGE});
             return;
         }
@@ -138,8 +142,11 @@ function changeUserEmail(req, res) {
         newEmail: req.body.newEmail,
     };
 
-    User.findOneAndUpdate({username: req.auth.username, password: userData.password}, {email: userData.newEmail}).then(u => {
-        if(!u) {
+    User.findOneAndUpdate({
+        username: req.auth.username,
+        password: userData.password
+    }, {email: userData.newEmail}).then(u => {
+        if (!u) {
             responseBuilderService.badRequest(res, {message: INCORRECT_PASSWORD_MESSAGE});
             return;
         }
@@ -152,11 +159,17 @@ function changeUserEmail(req, res) {
 
 function deleteUser(req, res) {
     let userData = {
-        password: req.body.password
+        password: req.body.password,
+        confirmPassword: req.body.confirmPassword
     };
 
+    if (userData.password !== userData.confirmPassword) {
+        responseBuilderService.badRequest(res, {message: PASSWORDS_DO_NOT_MATCH_MESSAGE});
+        return;
+    }
+
     User.findOneAndDelete({username: req.auth.username, password: userData.password}).then(u => {
-        if(!u) {
+        if (!u) {
             responseBuilderService.badRequest(res, {message: INCORRECT_PASSWORD_MESSAGE});
             return;
         }
@@ -169,7 +182,7 @@ function deleteUser(req, res) {
 
 function resetUserPassword(req, res) {
     User.findOne({email: req.body.email}).then(u => {
-        if(!u) {
+        if (!u) {
             responseBuilderService.badRequest(res, {message: INCORRECT_EMAIL_MESSAGE});
 
             return;
