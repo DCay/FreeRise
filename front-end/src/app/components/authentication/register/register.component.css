@@ -37,11 +37,11 @@ form {
   border: none;
   transition: 0.2s linear;
   background-color: #0479ec;
-  padding-bottom: 5px;
+  padding: 5px;
 }
 
 .register-btn:hover {
-  background: #238ff9;
+  background: #238ff9 !important;
   cursor: pointer;
 }
 
@@ -62,7 +62,7 @@ form {
   background: transparent;
   border: none;
   color: #8198a6;
-  padding-bottom: 18px;
+  padding-bottom: 8px;
   border-bottom: 2px solid #dee6eb;
   outline: transparent;
 }
@@ -89,8 +89,13 @@ input:focus::placeholder {
 .client-freelancer .col-xs-6 {
   border: none;
   transition: 0.2s linear;
-  background-color: #0479ec;
+  background-color: green;
   padding: 4px 16px;
+  cursor: pointer;
+}
+
+.client-freelancer .col-xs-6:active {
+  background-color: blue;
 }
 
 .client-freelancer .col-xs-6:first-child {
@@ -108,7 +113,9 @@ input:focus::placeholder {
   text-decoration: none;
 }
 
-.client-freelancer .col-xs-6:checked {
-  background: #238ff9;
-  cursor: pointer;
+/*#tags input, tag-input {*/
+  /*background: green !important;*/
+/*}*/
+/deep/ .tag *{
+  background-color: transparent !important;
 }

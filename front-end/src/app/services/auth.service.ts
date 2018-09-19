@@ -1,15 +1,17 @@
 import { Injectable } from "@angular/core";
-import { HttpHeaders, HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { RegisterModel } from "../models/register.model";
 import { LoginModel } from "../models/login.model";
 
 
+//Ivo DatabaseURL - http://192.168.14.13:8000
+//My DatabaseUrl - http://localhost:8000
+const DATABASE_URL = 'http://localhost:8000';
 
-
-const registerClientUrl = `http://192.168.14.13:8000/api/users/client/register`;
-const registerFreelancerUrl = `http://192.168.14.13:8000/api/users/freelancer/register`
-const loginUrl = `http://192.168.14.13:8000/api/users/login`;
-// const logoutUrl = `https://baas.kinvey.com/user/${appKey}/_logout`;
+const registerClientUrl = `${DATABASE_URL}/api/users/client/register`;
+const registerFreelancerUrl = `${DATABASE_URL}/api/users/freelancer/register`
+const loginUrl = `${DATABASE_URL}/api/users/login`;
+const logoutUrl = `${DATABASE_URL}/api/users/logout`;
 
 
 @Injectable({
@@ -18,6 +20,7 @@ const loginUrl = `http://192.168.14.13:8000/api/users/login`;
 
 export class AuthService {
     private currentAuthtoken: string;
+    private options = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
 
     constructor(private http: HttpClient) {
 
@@ -25,28 +28,28 @@ export class AuthService {
 
     login(model: LoginModel) {
         return this.http.post(loginUrl,
-            JSON.stringify(model), this.options);
+            JSON.stringify(model));
     }
 
     registerClient(model: RegisterModel) {
+
         return this.http.post(registerClientUrl,
-            JSON.stringify(model), this.options);
+            JSON.stringify(model));
     }
 
-    registerFreelancer(model){
+    registerFreelancer(model) {
         return this.http.post(registerFreelancerUrl,
-            JSON.stringify(model), this.options)
+            JSON.stringify(model));
     }
-    
-    private options = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
 
-    // logout() {
-    //     return this.http.post(logoutUrl,
-    //         {});
-    // }
+    logout() {
+        return this.http.post(logoutUrl,
+            {});
+    }
 
     checkIfLogged() {
-        return this.currentAuthtoken === localStorage.getItem('authtoken');
+        if (localStorage.getItem('authToken')) return true;
+        return false
     }
 
     get authToken() {

@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 let freelancerSchema = mongoose.Schema({
     firstName: {type: "string", required: "true"},
     lastName: {type: "string", required: "true"},
-    email: {type: "string", required: "true"},
     skills: {type: [String], default: []},
     resume: {type: "string", required: "true"},
     phone: {type: "string"},

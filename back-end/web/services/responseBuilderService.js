@@ -50,6 +50,10 @@ function internalServerError(res, data) {
         .send(JSON.stringify(data));
 }
 
+function download(res, data) {
+    res.download(data);
+}
+
 module.exports = (function () {
     return {
         ok: ok,
@@ -57,6 +61,7 @@ module.exports = (function () {
         unauthorized: unauthorized,
         forbidden: forbidden,
         notFound: notFound,
-        internalServerError: internalServerError
+        internalServerError: internalServerError,
+        download: download
     }
 }());

@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { RegisterModel } from '../../../models/register.model';
 import { FormGroup, FormControl, Validators, EmailValidator } from '@angular/forms';
 import { RegisterFreelancerModel } from '../../../models/register-freelancer.model';
-import { RegisterJqueryDirective } from '../../../directives/register-jquery.directive';
 
 
 export interface AutoCompleteModel {
@@ -15,8 +14,9 @@ export interface AutoCompleteModel {
 
 @Component({
   selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
+
+  templateUrl: './register.component.html'
 })
 export class RegisterComponent implements OnInit {
   model: RegisterModel;
@@ -84,7 +84,7 @@ export class RegisterComponent implements OnInit {
         },
         err => {
           console.log(err)
-          // this.form.reset();
+          // this.form.reset();dada
           // this.loginFailed = true;
           // this.errMessage = err['error']['description']
         })
@@ -108,10 +108,9 @@ export class RegisterComponent implements OnInit {
         })
   }
 
-  changeColor(e) {
-    this.freelancerButton = this.freelancerButton === "#9AC8E9" ? " #238ff9" : "#9AC8E9";
-    this.clientButton = this.clientButton === "#9AC8E9" ? "#238ff9" : "#9AC8E9";
-
+  changeColor(active) {
+    this.freelancerButton = active === 1 ? '#9AC8E9' : "#238ff9" || active === 2 ? "#238ff9" : '#9AC8E9';
+    this.clientButton = active === 1 ? "#238ff9" : '#9AC8E9' || active === 2 ? '#9AC8E9' : "#238ff9";
   }
 }
 

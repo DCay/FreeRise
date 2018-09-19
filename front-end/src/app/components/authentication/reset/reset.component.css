@@ -1,0 +1,40 @@
+.container-fluid {
+  width: 100%;
+  margin: 4% auto;
+}
+
+form {
+  margin: 10% auto;
+  margin-bottom: 0;
+  width: 43%;
+  background: #F5FAFD;
+  padding: 4%;
+  box-shadow: 1px 1px 44px rgba(38, 63, 90, 0.09);
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.container-fluid input {
+  background: transparent;
+  border: none;
+  color: #8198a6;
+  padding-bottom: 18px;
+  border-bottom: 2px solid #dee6eb;
+  outline: transparent;
+}
+
+#usernameОrPassword {
+  width: 81%;
+}
+
+#login-submit {
+  font-size: 19px;
+  color: #fff;
+  border-radius: 7px;
+  text-transform: uppercase;
+  border: none;
+  transition: 0.2s linear;
+  background-color: #0479ec;
+  padding: 6px 17px;
+  cursor: pointer;
+}
